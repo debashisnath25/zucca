@@ -42,7 +42,7 @@ include ("config.php");
                     </div>
 
 					<!-- BEGIN PAGE TITLE-->
-                    <h3 class="page-title" style="background:#efefef;padding:7px;font-size:17px;"> Jobs
+                    <h3 class="page-title" style="background:#efefef;padding:7px;font-size:17px;"> Category
                         <!--<small>Statistics</small>-->
                     </h3>
                     <!-- END PAGE TITLE-->
@@ -51,47 +51,28 @@ include ("config.php");
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div style="height:60px;width:60px;" class="col-md-6">
-								<a href="add_jobs.php" ><img src="images/1468025403_vector_65_05.png" style="height:50px;width:50px;" /></a>
+								<a href="add_category.php" ><img src="images/bookmark-add.png" style="height:50px;width:50px;" /></a>
 							</div>
 							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
-								<a href="add_jobs.php" style="color:#000;">Add Job</a>
+								<a href="add_category.php" style="color:#000;">Add Category</a>
 							</div>
                         </div>
 
 						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div style="height:60px;width:60px;" class="col-md-6">
-								<a href="view_jobs.php" ><img src="images/1467998568_resolutions-23.png" style="height:50px;width:50px;" /></a>
+								<a href="listing_category.php" ><img src="images/1467998568_resolutions-23.png" style="height:50px;width:50px;" /></a>
 							</div>
 							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
-								<a href="view_jobs.php" style="color:#000;">View Jobs</a>
+								<a href="listing_category.php" style="color:#000;">Listing Category</a>
 							</div>
-                        </div>
-						
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div style="height:60px;width:60px;" class="col-md-6">
-								<a href="view_jobs_category.php" ><img src="images/1467998119_categories.png" style="height:50px;width:50px;" /></a>
-							</div>
-							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
-								<a href="view_jobs_category.php" style="color:#000;">Categories</a>
-							</div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div style="height:60px;width:60px;" class="col-md-6">
-								<a href="view_job_location.php" ><img src="images/1467998190_advantage_nearby.png" style="height:50px;width:50px;" /></a>
-							</div>
-							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
-								<a href="view_job_location.php" style="color:#000;">Locations</a>
-							</div>
-                        </div>
-						
+                        </div>					
                     </div>
 					                    
                     <div class="clearfix"></div>
 
                     <!-- END PAGE BAR -->
                     <!-- BEGIN PAGE TITLE-->
-                    <h3 class="page-title" style="background:#efefef;padding:7px;font-size:17px;"> Property
+                    <h3 class="page-title" style="background:#efefef;padding:7px;font-size:17px;"> Sub-Category
                         <!--<small>Statistics</small>-->
                     </h3>
                     <!-- END PAGE TITLE-->
@@ -100,197 +81,94 @@ include ("config.php");
                     <div class="row">
 						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div style="height:60px;width:60px;" class="col-md-6">
-								<a href="add_apartment.php" ><img src="images/1467997287_Home-icon.png" style="height:50px;width:50px;" /></a>
+								<a href="add_sub_category.php" ><img src="images/1467997287_Home-icon.png" style="height:50px;width:50px;" /></a>
 							</div>
 							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
-								<a href="add_apartment.php" style="color:#000;">Add Apartment</a>
+								<a href="add_sub_category.php" style="color:#000;">Add Sub-Category</a>
 							</div>
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div style="height:60px;width:60px;" class="col-md-6">
-								<a href="view_apartment.php" ><img src="images/1467997287_Home-icon.png" style="height:50px;width:50px;" /></a>
+								<a href="listing_sub_category.php" ><img src="images/1467997287_Home-icon.png" style="height:50px;width:50px;" /></a>
 							</div>
 							<div class="col-md-6" style="font-size:12px;padding-top:17px;">
-								<a href="view_apartment.php" style="color:#000;">View Apartment</a>
+								<a href="listing_sub_category.php" style="color:#000;">Listing Sub-Category</a>
 							</div>
                         </div>
-
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div style="height:60px;width:60px;" class="col-md-6">
-								<a href="add_land.php" ><img src="images/1467997750_location-icon.png" style="height:50px;width:50px;" /></a>
-							</div>
-							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
-								<a href="add_land.php" style="color:#000;">Add Land</a>
-							</div>
-                        </div>
-
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div style="height:60px;width:60px;" class="col-md-6">
-								<a href="view_land.php" ><img src="images/1467997750_location-icon.png" style="height:50px;width:50px;" /></a>
-							</div>
-							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
-								<a href="view_land.php" style="color:#000;">View Lands</a>
-							</div>
-                        </div>
-
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div style="height:60px;width:60px;" class="col-md-6">
-								<a href="add_office.php" ><img src="images/1467997897_architecture-interior-02.png" style="height:50px;width:50px;" /></a>
-							</div>
-							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
-								<a href="add_office.php" style="color:#000;">Add Office</a>
-							</div>
-                        </div>
-
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div style="height:60px;width:60px;" class="col-md-6">
-								<a href="view_office.php" ><img src="images/1467997897_architecture-interior-02.png" style="height:50px;width:50px;" /></a>
-							</div>
-							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
-								<a href="view_office.php" style="color:#000;">View Offices</a>
-							</div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div style="height:60px;width:60px;" class="col-md-6">
-								<a href="add_room.php" ><img src="images/1467998074_bed.png" style="height:50px;width:50px;" /></a>
-							</div>
-							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
-								<a href="add_room.php" style="color:#000;">Add Room</a>
-							</div>
-                        </div>
-
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div style="height:60px;width:60px;" class="col-md-6">
-								<a href="view_room.php" ><img src="images/1467998074_bed.png" style="height:50px;width:50px;" /></a>
-							</div>
-							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
-								<a href="view_room.php" style="color:#000;">View Rooms</a>
-							</div>
-                        </div>
-                    </div>
-					
-					<div class="row">
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div style="height:60px;width:60px;" class="col-md-6">
-								<a href="view_property_location.php" ><img src="images/1468025122_miscellaneous-31.png" style="height:50px;width:50px;" /></a>
-							</div>
-							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
-								<a href="view_property_location.php" style="color:#000;">Locations</a>
-							</div>
-                        </div>
-                    </div>
-					
-					
-                    <div class="clearfix"></div>
-
-
-					<!-- END PAGE BAR -->
-
-                    <!-- END DASHBOARD STATS 1-->
-
-					<!-- END PAGE BAR -->
-					
-                    <!-- BEGIN PAGE TITLE-->
-                    <h3 class="page-title" style="background:#efefef;padding:7px;font-size:17px;"> Advertisement
-                        <!--<small>Statistics</small>-->
-                    </h3>
-                    <!-- END PAGE TITLE-->
-                    <!-- END PAGE HEADER-->
-                    <!-- BEGIN DASHBOARD STATS 1-->
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div style="height:60px;width:60px;" class="col-md-6">
-								<a href="home_featureads.php" ><img src="images/1467998820_Online_Presence_Management.png" style="height:50px;width:50px;" /></a>
-							</div>
-							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
-								<a href="home_featureads.php" style="color:#000;">Homepage Ads</a>
-							</div>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <!-- END DASHBOARD STATS 1-->
-
-
-					<!-- END PAGE BAR -->
-                    <!-- BEGIN PAGE TITLE-->
-                    <h3 class="page-title" style="background:#efefef;padding:7px;font-size:17px;">Registered Users
-                        <!--<small>Statistics</small>-->
-                    </h3>
-                    <!-- END PAGE TITLE-->
-                    <!-- END PAGE HEADER-->
-                    <!-- BEGIN DASHBOARD STATS 1-->
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div style="height:60px;width:65px;" class="col-md-6">
-								<a href="" ><img src="images/1467999267_cloud-users.png" style="height:45px;width:60px;" /></a>
-							</div>
-							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
-								<a href="" style="color:#000;">Users</a>
-							</div>
-                        </div>
-
-                    </div>
-					
-					 <!-- BEGIN PAGE TITLE-->
-                    <h3 class="page-title" style="background:#efefef;padding:7px;font-size:17px;">Site pages
-                        <!--<small>Statistics</small>-->
-                    </h3>
-                    <!-- END PAGE TITLE-->
-                    <!-- END PAGE HEADER-->
-                    <!-- BEGIN DASHBOARD STATS 1-->
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div style="height:60px;width:65px;" class="col-md-6">
-								<a href="view_about.php" ><img src="images/1468088203_EditDocument.png" style="height:45px;width:60px;" /></a>
-							</div>
-							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
-								<a href="view_about.php" style="color:#000;">About</a>
-							</div>
-                        </div>
+					</div>
 						
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div style="height:60px;width:65px;" class="col-md-6">
-								<a href="view_faq.php" ><img src="images/1468088203_EditDocument.png" style="height:45px;width:60px;" /></a>
-							</div>
-							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
-								<a href="view_faq.php" style="color:#000;">FAQ</a>
-							</div>
-                        </div>
-
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div style="height:60px;width:65px;" class="col-md-6">
-								<a href="view_privacy.php" ><img src="images/1468088203_EditDocument.png" style="height:45px;width:60px;" /></a>
-							</div>
-							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
-								<a href="view_privacy.php" style="color:#000;">Privacy & policy</a>
-							</div>
-                        </div>
-
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div style="height:60px;width:65px;" class="col-md-6">
-								<a href="view_terms&condition.php" ><img src="images/1468088203_EditDocument.png" style="height:45px;width:60px;" /></a>
-							</div>
-							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
-								<a href="view_terms&condition.php" style="color:#000;">T & C</a>
-							</div>
-                        </div>
-
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div style="height:60px;width:65px;" class="col-md-6">
-								<a href="view_social_media_links.php" ><img src="images/1468088203_EditDocument.png" style="height:45px;width:60px;" /></a>
-							</div>
-							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
-								<a href="view_social_media_links.php" style="color:#000;">Social Media</a>
-							</div>
-                        </div>
-
-                    </div>
-					
                     <div class="clearfix"></div>
+
+
+					<!-- END PAGE BAR -->
+
+                    <!-- END DASHBOARD STATS 1-->
+
+					<!-- END PAGE BAR -->
 					
-					
+                    <!-- BEGIN PAGE TITLE-->
+                    <h3 class="page-title" style="background:#efefef;padding:7px;font-size:17px;"> Brand
+                        <!--<small>Statistics</small>-->
+                    </h3>
+                    <!-- END PAGE TITLE-->
+                    <!-- END PAGE HEADER-->
+                    <!-- BEGIN DASHBOARD STATS 1-->
+                   <div class="row">
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div style="height:60px;width:60px;" class="col-md-6">
+								<a href="add_brand.php" ><img src="images/1467997287_Home-icon.png" style="height:50px;width:50px;" /></a>
+							</div>
+							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
+								<a href="add_brand.php" style="color:#000;">Add Brand</a>
+							</div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div style="height:60px;width:60px;" class="col-md-6">
+								<a href="listing_brand.php" ><img src="images/1467997287_Home-icon.png" style="height:50px;width:50px;" /></a>
+							</div>
+							<div class="col-md-6" style="font-size:12px;padding-top:17px;">
+								<a href="listing_brand.php" style="color:#000;">Listing Brand</a>
+							</div>
+                        </div>
+					</div>
+                    <div class="clearfix"></div>
+                    <!-- END DASHBOARD STATS 1-->
+
+
+					<!-- END PAGE BAR -->
+                    <!-- BEGIN PAGE TITLE-->
+                    <h3 class="page-title" style="background:#efefef;padding:7px;font-size:17px;">Product
+                        <!--<small>Statistics</small>-->
+                    </h3>
+                    <!-- END PAGE TITLE-->
+                    <!-- END PAGE HEADER-->
+                    <!-- BEGIN DASHBOARD STATS 1-->
+                    <div class="row">
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div style="height:60px;width:60px;" class="col-md-6">
+								<a href="add_product.php" ><img src="images/1467997287_Home-icon.png" style="height:50px;width:50px;" /></a>
+							</div>
+							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
+								<a href="add_product.php" style="color:#000;">Add Product</a>
+							</div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div style="height:60px;width:60px;" class="col-md-6">
+								<a href="listing_product.php" ><img src="images/1467997287_Home-icon.png" style="height:50px;width:50px;" /></a>
+							</div>
+							<div class="col-md-6" style="font-size:12px;padding-top:17px;">
+								<a href="listing_product.php" style="color:#000;">Listing Product</a>
+							</div>
+                        </div>
+					</div>					
+					 <!-- BEGIN PAGE TITLE-->                   
+                    <!-- END PAGE TITLE-->
+                    <!-- END PAGE HEADER-->
+                    <!-- BEGIN DASHBOARD STATS 1-->					
+                    <div class="clearfix"></div>			
                 </div>
                 <!-- END CONTENT BODY -->
             </div>

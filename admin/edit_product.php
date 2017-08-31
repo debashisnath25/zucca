@@ -301,8 +301,8 @@ if(isset($_GET['delete_id'])){
 											</div>
 										</div>
 										<div class="col-md-4">
-							<div class="form-group last">
-												<label class="control-label col-md-3">Secoundery Image </label>
+											<div class="form-group last">
+												<label class="control-label col-md-3">Product Image </label>
 												<div class="col-md-9 ">
 													<div class="addsz">
 													<div class="fileinput fileinput-new" data-provides="fileinput">
