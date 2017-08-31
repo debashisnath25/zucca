@@ -201,7 +201,7 @@
                     <!-- Right Sidebar Nav -->
                     <div class="header-rightside-nav">
                         <!-- Login-Register Link -->
-                        <div class="header-btn-link hidden-lg-down"><a href="login-register.php" class="btn btn-sm btn-color">Buy Now</a></div>
+                        <div class="header-btn-link hidden-lg-down"><a href="seller_login.php" class="btn btn-sm btn-color">Sellers</a></div>
                         <!-- End Login-Register Link -->
 
                         <!-- Sidebar Icon -->

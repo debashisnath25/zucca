@@ -117,6 +117,22 @@ body {
     color: #ffffff;
 }
 
+same {
+    border-radius: 9px;
+    min-height: 206px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 14px;
+    font-weight: normal;
+    transition: 0.5s ease;
+}
+
+orange_box {
+    background: #e25b45;
+    color: #ffffff;
+    padding: 15px;
+    position: relative;
+}
 * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
