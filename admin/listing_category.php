@@ -21,7 +21,7 @@ if(isset($_GET['del_cat_id'])){
     <!-- BEGIN HEAD -->
 
     <head>
-		<title>Zucca</title>
+		<title>Zucca | Listing Category</title>
         <?php include('metalinks.php'); ?>
 	</head>
     <!-- END HEAD -->
@@ -78,7 +78,8 @@ if(isset($_GET['del_cat_id'])){
                                     <table class="table table-striped table-bordered table-hover dt-responsive" width="100%" id="sample_1">
                                         <thead>
                                             <tr>
-												<th class="all">Sl. No.</th>												
+												<th class="all">Sl. No.</th>
+												<th class="all">Category Type</th>
                                                 <th class="all">Category Name</th>
                                                 <th class="min-phone-l">Image</th>
 												 <th class="min-phone-l">Action</th>
@@ -92,7 +93,8 @@ if(isset($_GET['del_cat_id'])){
 											{
 											?>
                                             <tr>
-												<td><?php echo $i;?></td>												
+												<td><?php echo $i;?></td>	
+												 <td><?php echo $fetch_cat_details['cat_type'];?></td> 
                                                 <td><?php echo $fetch_cat_details['category_name'];?></td>                                               
 												<td>
 													<img src="uploads/<?php echo $fetch_cat_details['category_image']; ?>" width="100" height="75"/>

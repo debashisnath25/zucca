@@ -21,7 +21,7 @@ if(isset($_GET['del_brand'])){
     <!-- BEGIN HEAD -->
 
     <head>
-		<title>Zucca</title>
+		<title>Zucca | Listing Brand</title>
         <?php include('metalinks.php'); ?>
 	</head>
     <!-- END HEAD -->

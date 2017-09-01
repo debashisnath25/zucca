@@ -52,7 +52,7 @@ if(isset($_POST['submit_product']))
 
     <head>
         <meta charset="utf-8" />
-        <title>Zucca</title>
+        <title>Zucca | Add Product</title>
         <?php include('metalinks.php'); ?>
 		<style>
 		  .hidden {
@@ -100,7 +100,7 @@ if(isset($_POST['submit_product']))
                     <div class="row">
                         <div class="col-md-12">
                             <!-- BEGIN VALIDATION STATES-->
-                            <div class="portlet light portlet-fit portlet-form bordered">
+                           <div class="portlet light portlet-fit portlet-form bordered">
 							<div class="col-md-12 col-sm-12">
 						<?php
 								if(isset($data) && $data == "success")

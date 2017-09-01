@@ -63,7 +63,7 @@ if(isset($_POST['update_product']))
 
     <head>
         <meta charset="utf-8" />
-        <title>Zucca</title>
+        <title>Zucca | View Product</title>
         <?php include('metalinks.php'); ?>
 		<style>
 		  .hidden {

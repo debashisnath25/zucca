@@ -12,7 +12,7 @@ $get_cat_id = $_GET['cat_id'];
 
     <head>
         <meta charset="utf-8" />
-        <title>Zucca</title>
+        <title>Zucca | View Category</title>
         <?php include('metalinks.php'); ?>
 		<style>
 		  .hidden {
@@ -98,6 +98,18 @@ $get_cat_id = $_GET['cat_id'];
                                             
 									<div class="col-md-12" style="padding-top:30px;" >
 										<div class="col-md-6">
+			
+											<div class="form-group">
+                                                <label class="control-label col-md-3">Category Type
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-9">
+													<div class="form-control">														
+														<label><?php echo $fetch_cat_info['cat_type'];?></label>
+													</div>
+												</div>
+                                            </div>
+
                                             <div class="form-group">
                                                 <label class="control-label col-md-3">Category Name
                                                     <span class="required"> * </span>

@@ -1,42 +1,4 @@
 <?php
-include('config.php');
-$user_details_query = mysqli_query($mysqli,"select * from users where user_id = '".$_SESSION['user_id']."' ");
-$user_details_fetch = mysqli_fetch_array($user_details_query);
-if(isset($_POST['submit_property']))
-{
-	$old_password = $_POST['old_password'];
-
-	$check_password_query = mysqli_query($mysqli,"select * from users where password='".$old_password."'");
-	$get_rows = mysqli_num_rows($check_password_query);
-	if($get_rows > 0)
-	{
-		$new_password = $_POST['nw_password'];
-		$image = $_FILES['image']['name'];
-		if($image == '')
-		{
-			$image_url = "uploads/user.png";
-		}
-		else
-		{
-		$image_url = rand(9999,999999).$image;
-		move_uploaded_file($_FILES['image']['tmp_name'],"uploads/".$image_url);
-		}
-		$update_new_password = mysqli_query($mysqli,"update users set password='".$new_password."' and picture = '".$image_url."' where user_id='".$_SESSION['user_id']."'");
-		if($update_new_password)
-		{
-			$success = 1;
-		}
-		else
-		{
-			$success = 0;
-		}
-	}
-	else
-	{
-		$success = 2;
-	}
-						
-}
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
@@ -128,7 +90,7 @@ if(isset($_POST['submit_property']))
 														<span class="input-group-addon">
 															<i class="fa fa-envelope"></i>
 														</span>
-														<input type="text" name="email" data-required="1" class="form-control" value="<?php echo $user_details_fetch['email'];  ?>" disabled/>
+														<input type="text" name="email" data-required="1" class="form-control" value="" disabled/>
 													</div>
 												</div>
                                             </div>
@@ -137,7 +99,7 @@ if(isset($_POST['submit_property']))
 													<div class="col-md-9">
 														<div class="fileinput fileinput-new" data-provides="fileinput">
 															<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-																<img src="<?php echo $user_details_fetch['picture']; ?>" alt="" /> </div>
+																<img src="" alt="" /> </div>
 															<div class="fileinput-preview fileinput-exists thumbnail" style="width: 335px; height: 255px;"> </div>
 															<div>
 																<span class="btn default btn-file">

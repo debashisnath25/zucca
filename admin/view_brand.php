@@ -13,7 +13,7 @@ $get_brand_id = $_GET['brand_id'];
 
     <head>
         <meta charset="utf-8" />
-        <title>Zucca</title>
+        <title>Zucca | View Brand</title>
         <?php include('metalinks.php'); ?>
 		<style>
 		  .hidden {

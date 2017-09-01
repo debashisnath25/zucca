@@ -23,7 +23,7 @@ if(isset($_POST['submit_brand']))
 
     <head>
         <meta charset="utf-8" />
-        <title>Zucca</title>
+        <title>Zucca | Add Brand</title>
         <?php include('metalinks.php'); ?>
 		<style>
 		  .hidden {
