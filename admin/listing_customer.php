@@ -20,7 +20,7 @@ if(isset($_GET['del_pro_id'])){
     <!-- BEGIN HEAD -->
 
     <head>
-		<title>Zucca | Listing Seller</title>
+		<title>Zucca | Listing Customer</title>
         <?php include('metalinks.php'); ?>
 	</head>
     <!-- END HEAD -->
@@ -46,7 +46,7 @@ if(isset($_GET['del_pro_id'])){
                                 <i class="fa fa-circle"></i>
                             </li>
                             <li>
-                                <a href="#">Seller</a>
+                                <a href="#">Customer</a>
                                 <i class="fa fa-circle"></i>
                             </li>
                             <li>
@@ -56,19 +56,19 @@ if(isset($_GET['del_pro_id'])){
                     </div>
                     <!-- END PAGE BAR -->
                     <!-- BEGIN PAGE TITLE-->
-                    <h3 class="page-title"> Seller -
+                    <h3 class="page-title"> Customer -
                         <small>Listing</small>
                     </h3>
                     <!-- END PAGE TITLE-->
                     <!-- END PAGE HEADER-->
                     <div class="row">
-                        <div class="col-md-12">							
+                        <div class="col-md-12"							
                             <!-- BEGIN EXAMPLE TABLE PORTLET-->
                             <div class="portlet light bordered">
                                 <div class="portlet-title">
                                     <div class="caption font-dark">
                                         <i class="icon-home font-dark"></i>
-                                        <span class="caption-subject bold uppercase">Listing Seller</span>
+                                        <span class="caption-subject bold uppercase">Listing Customer</span>
                                     </div>
                                     <div class="tools"> </div>
                                 </div>
@@ -92,7 +92,7 @@ if(isset($_GET['del_pro_id'])){
                                         <tbody>
 											<?php
 											$i=1;
-											$get_user = mysqli_query($mysqli,"select * from user where user_type='seller'");
+											$get_user = mysqli_query($mysqli,"select * from user where user_type='customer'");
 											while($fetch_user_details = mysqli_fetch_array($get_user))
 											{
 											?>
@@ -106,7 +106,7 @@ if(isset($_GET['del_pro_id'])){
 												<td><?php echo $fetch_user_details['address'];?><br><?php echo $fetch_user_details['city'];?><br><?php echo $fetch_user_details['state'];?><br><?php echo $fetch_user_details['pincode'];?></td>
 												<td><?php echo $fetch_user_details['voter_id'];?></td>
 												<td><?php echo $fetch_user_details['pancard'];?></td>
-												<td><?php echo $fetch_user_details['tradelicense'];?></td>
+												<td><?php echo $fetch_user_details['tradelicense'];?></td>												
 												<!-- Actions -->
 												<td><a href="view_product.php?product_id=<?php echo $fetch_user_details['product_id'];?>" class="btn green btn-outline sbold uppercase">View</a>
 												<a href="edit_product.php?product_id=<?php echo $fetch_user_details['product_id'];?>" class="btn green btn-outline sbold uppercase" >Edit</a>

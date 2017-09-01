@@ -1,6 +1,6 @@
 <!-- BEGIN FOOTER -->
         <div class="page-footer">
-            <div class="page-footer-inner"> 2016 &copy; <a href="#" title="Get the best property" target="_blank">IsraFind</a>
+            <div class="page-footer-inner"> 2017 &copy; <a href="#" title="Get the best property" target="_blank">Zucca</a>
             </div>
             <div class="scroll-to-top">
                 <i class="icon-arrow-up"></i>
