@@ -83,7 +83,7 @@ include ("config.php");
                             <div style="height:60px;width:60px;" class="col-md-6">
 								<a href="add_sub_category.php" ><img src="images/1467997287_Home-icon.png" style="height:50px;width:50px;" /></a>
 							</div>
-							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
+							<div class="col-md-8" style="font-size:13px;padding-top:17px;">
 								<a href="add_sub_category.php" style="color:#000;">Add Sub-Category</a>
 							</div>
                         </div>
@@ -92,7 +92,7 @@ include ("config.php");
                             <div style="height:60px;width:60px;" class="col-md-6">
 								<a href="listing_sub_category.php" ><img src="images/1467997287_Home-icon.png" style="height:50px;width:50px;" /></a>
 							</div>
-							<div class="col-md-6" style="font-size:12px;padding-top:17px;">
+							<div class="col-md-8" style="font-size:12px;padding-top:17px;">
 								<a href="listing_sub_category.php" style="color:#000;">Listing Sub-Category</a>
 							</div>
                         </div>

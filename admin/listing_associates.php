@@ -80,7 +80,7 @@ if(isset($_GET['del_pro_id'])){
 												<th class="all">Profile Picture</th>
 												<th class="all">Name</th>
                                                 <th class="all">Enterprise Name</th>
-                                                <th class="all">Email</th>
+                                                <th class="none">Email</th>
 												<th class="none">Phone</th>
 												<th class="none">Address</th>
 												<th class="none">Voter ID</th>

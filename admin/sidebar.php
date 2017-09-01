@@ -37,7 +37,7 @@
 				<!--work -->
 						 <li class="nav-item start <?php if($page_name == 'listing_seller.php' || $page_name == 'listing_associates.php' || $page_name == 'listing_customer.php') { ?>active open<?php } ?>">
                             <a href="javascript:void(0);" class="nav-link nav-toggle">
-                                <i class="icon-pointer"></i>
+                                <i class="fa fa-user"></i>
                                 <span class="title">All Users</span>
                                 <span class="arrow open"></span>
                             </a>
@@ -74,6 +74,14 @@
                             </a>
                         </li>
 
+						 <li class="nav-item start <?php if($page_name == 'approve_sellers.php'){ ?>active open<?php } ?>">
+                            <a href="approve_sellers.php" class="nav-link nav-toggle">
+                                <i class="icon-home"></i>
+                                <span class="title">Approve Sellers</span>
+                                <span class="selected"></span>
+                            </a>
+                        </li>
+
                         <li class="nav-item start <?php if($page_name == 'add_category.php' || $page_name == 'listing_category.php' || $page_name == 'edit_category.php' || $page_name == 'view_category.php') { ?>active open<?php } ?>">
                             <a href="javascript:void(0);" class="nav-link nav-toggle">
                                 <i class="icon-pointer"></i>
@@ -92,8 +100,7 @@
 										<i class="icon-compass"></i>
                                         <span class="title">Listing Category</span>
                                     </a>
-                                </li>
-								
+                                </li>								
                             </ul>
                         </li>
                         <li class="nav-item start <?php if($page_name == 'add_sub_category.php' || $page_name == 'listing_sub_category.php' || $page_name == 'edit_sub_category.php' || $page_name == 'view_sub_category.php') { ?>active open<?php } ?>  ">
