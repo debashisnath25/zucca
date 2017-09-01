@@ -24,7 +24,7 @@ if(isset($_POST['submit_sub_category']))
 
     <head>
         <meta charset="utf-8" />
-        <title>Zucca</title>
+        <title>Zucca | Add Sub-Category</title>
         <?php include('metalinks.php'); ?>
 		<style>
 		  .hidden {

@@ -21,7 +21,7 @@ if(isset($_GET['del_subcat_id'])){
     <!-- BEGIN HEAD -->
 
     <head>
-		<title>Zucca</title>
+		<title>Zucca | Listing Sub-Category</title>
         <?php include('metalinks.php'); ?>
 	</head>
     <!-- END HEAD -->

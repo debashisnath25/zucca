@@ -10,7 +10,7 @@ $uploaded_image = $fetch_cat_image['category_image'];
 if(isset($_POST['submit_category']))
 {
 	$cat_name = $_POST['cat_name'];
-
+	$cat_type = $_POST['cat_type'];
 	if($_FILES['cat_image']['name'] == '')
 	{
 		$save_image = $uploaded_image;
@@ -22,7 +22,7 @@ if(isset($_POST['submit_category']))
 	move_uploaded_file($tmp_image,"uploads/".$save_image);
 	}
 
-	$update_cat = mysqli_query($mysqli,"UPDATE category SET category_name='".$cat_name."', category_image='".$save_image."' where cat_id='$get_cat_id'");
+	$update_cat = mysqli_query($mysqli,"UPDATE category SET cat_type ='$cat_type',category_name='".$cat_name."', category_image='".$save_image."' where cat_id='$get_cat_id'");
 
 	if($update_cat){
 		$data = "success";
@@ -42,7 +42,7 @@ if(isset($_POST['submit_category']))
 
     <head>
         <meta charset="utf-8" />
-        <title>Zucca</title>
+        <title>Zucca | Edit Category</title>
         <?php include('metalinks.php'); ?>
 		<style>
 		  .hidden {
@@ -128,6 +128,26 @@ if(isset($_POST['submit_category']))
                                             
 									<div class="col-md-12" style="padding-top:30px;" >
 										<div class="col-md-6">
+
+										<div class="form-group">
+                                                <label class="control-label col-md-3">Category Type
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-9">
+													<div class="input-group">
+														<span class="input-group-addon">
+															<i class="fa fa-bookmark"></i>
+														</span>
+														<select name="cat_type" class="form-control">
+														<option value="<?php echo $fetch_cat_info['cat_type'];?>" selected disabled></option>
+														<option value="men" <?php echo (($fetch_cat_info['cat_type']=='men')?'selected':'')?>>MEN</option>
+														<option value="women"<?php echo (($fetch_cat_info['cat_type']=='women')?'selected':'')?>>WOMEN</option>
+														<option value="kids"<?php echo (($fetch_cat_info['cat_type']=='kids')?'selected':'')?>>KIDS</option>
+														</select>
+													</div>
+												</div>
+                                            </div>
+
                                             <div class="form-group">
                                                 <label class="control-label col-md-3">Category Name
                                                     <span class="required"> * </span>

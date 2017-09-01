@@ -66,7 +66,7 @@ if(isset($_GET['delete_id'])){
 
     <head>
         <meta charset="utf-8" />
-        <title>Zucca</title>
+        <title>Zucca | Edit Product</title>
         <?php include('metalinks.php'); ?>
 		<style>
 		  .hidden {

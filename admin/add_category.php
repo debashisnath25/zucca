@@ -3,13 +3,14 @@ include('config.php');
 
 if(isset($_POST['submit_category']))
 {
+	$cat_type = $_POST['cat_type'];
 	$cat_name = $_POST['cat_name'];
 	$tmp_image = $_FILES['cat_image']['tmp_name'];
 	$image = $_FILES['cat_image']['name'];
 	$save_image = rand(99,9999).$image;
 	move_uploaded_file($tmp_image,"uploads/".$save_image);
 
-	$add_cat_image = mysqli_query($mysqli,"INSERT INTO category Values ('','$cat_name','$save_image','')");
+	$add_cat_image = mysqli_query($mysqli,"INSERT INTO category Values ('','$cat_type','$cat_name','$save_image','')");
 	if($add_cat_image){
 		$data = "success";
 	}else{
@@ -28,7 +29,7 @@ if(isset($_POST['submit_category']))
 
     <head>
         <meta charset="utf-8" />
-        <title>Zucca</title>
+        <title>Zucca | Add Category</title>
         <?php include('metalinks.php'); ?>
 		<style>
 		  .hidden {
@@ -109,6 +110,26 @@ if(isset($_POST['submit_category']))
                                             
 									<div class="col-md-12" style="padding-top:30px;" >
 										<div class="col-md-6">
+
+											<div class="form-group">
+                                                <label class="control-label col-md-3">Category Type
+                                                    <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-9">
+													<div class="input-group">
+														<span class="input-group-addon">
+															<i class="fa fa-bookmark"></i>
+														</span>
+														<select name="cat_type" class="form-control">
+														<option value="" selected disabled>Choose Type</option>
+														<option value="men">MEN</option>
+														<option value="women">WOMEN</option>
+														<option value="kids">KIDS</option>
+														</select>
+													</div>
+												</div>
+                                            </div>
+
                                             <div class="form-group">
                                                 <label class="control-label col-md-3">Category Name
                                                     <span class="required"> * </span>
