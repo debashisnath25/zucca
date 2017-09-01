@@ -34,7 +34,46 @@
                                 <span class="selected"></span>
                             </a>
                         </li>
-                       
+				<!--work -->
+						 <li class="nav-item start <?php if($page_name == 'listing_seller.php' || $page_name == 'listing_associates.php' || $page_name == 'listing_customer.php') { ?>active open<?php } ?>">
+                            <a href="javascript:void(0);" class="nav-link nav-toggle">
+                                <i class="icon-pointer"></i>
+                                <span class="title">All Users</span>
+                                <span class="arrow open"></span>
+                            </a>
+                            <ul class="sub-menu"  style="">
+                             <li class="nav-item start <?php if($page_name == 'listing_seller.php'){ ?>active open<?php } ?>">
+								<a href="listing_seller.php" class="nav-link nav-toggle">
+									<i class="icon-home"></i>
+									<span class="title">Listing Sellers</span>
+									<span class="selected"></span>
+								</a>
+							 </li>
+							<li class="nav-item start <?php if($page_name == 'listing_associates.php'){ ?>active open<?php } ?>">
+								<a href="listing_associates.php" class="nav-link nav-toggle">
+									<i class="icon-home"></i>
+									<span class="title">Listing Associates</span>
+									<span class="selected"></span>
+								</a>
+							</li>
+							<li class="nav-item start <?php if($page_name == 'listing_customer.php'){ ?>active open<?php } ?>">
+								<a href="listing_customer.php" class="nav-link nav-toggle">
+									<i class="icon-home"></i>
+									<span class="title">Listing Customers</span>
+									<span class="selected"></span>
+								</a>
+							 </li>								
+                            </ul>
+                        </li>
+
+						 <li class="nav-item start <?php if($page_name == 'associate_to_sellers.php'){ ?>active open<?php } ?>">
+                            <a href="associate_to_sellers.php" class="nav-link nav-toggle">
+                                <i class="icon-home"></i>
+                                <span class="title">Assign Associate To Sellers</span>
+                                <span class="selected"></span>
+                            </a>
+                        </li>
+
                         <li class="nav-item start <?php if($page_name == 'add_category.php' || $page_name == 'listing_category.php' || $page_name == 'edit_category.php' || $page_name == 'view_category.php') { ?>active open<?php } ?>">
                             <a href="javascript:void(0);" class="nav-link nav-toggle">
                                 <i class="icon-pointer"></i>
@@ -99,6 +138,14 @@
                                 </li>
                             </ul>
                         </li>
+
+						<li class="nav-item start <?php if($page_name == 'user_settings.php') { ?>active open<?php } ?>">
+                            <a href="user_settings.php" class="nav-link">
+                                <i class="fa fa-cog"></i>
+                                <span class="title">Settings</span>
+                                <span class="selected"></span>
+                            </a>
+                        </li>
 				<?php
 				}else if($fetch_user_type['user_type']=='seller'){
 				?>
@@ -132,13 +179,7 @@
                         </li>
 				<?php
 					}
-				?>
-						
-						
-                       
-                       
-
-                        <!--<li class="nav-item  ">
+				?>        <!--<li class="nav-item  ">
                             <a href="?p=" class="nav-link nav-toggle">
                                 <i class="icon-wallet"></i>
                                 <span class="title">Plans</span>

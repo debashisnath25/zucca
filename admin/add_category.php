@@ -78,24 +78,23 @@ if(isset($_POST['submit_category']))
                         <div class="col-md-12">
                             <!-- BEGIN VALIDATION STATES-->
                             <div class="portlet light portlet-fit portlet-form bordered">
-							<div class="col-md-12 col-sm-12">
-						<?php
-								if(isset($data) && $data == "success")
-						{
-						?>
-						<p style="text-align:center;background:#5cb85c;border:1px solid #CCC;border-radius:5px;padding:5px;color:#fff;font-weight:bold;margin-left:15px;"> Added Successfully </p>
-						<?php
-						}else if(isset($data) && $data == "error"){
-						?>
-						<p style="text-align:center;background:#e54e53;border:1px solid #CCC;border-radius:5px;padding:5px;color:#fff;font-weight:bold;margin-left:15px;"> Error in Insertion </p>
-						<?php
-						}else if(isset($data) && $data == "customer_exist"){
-						?>
-						<p style="text-align:center;background:#4a89dc;border:1px solid #CCC;border-radius:5px;padding:5px;color:#fff;font-weight:bold;margin-left:15px;"> Customer Details Already Exist </p>
-						<?php
-						}
-						?>
-						</div>
+								<div class="col-md-12 col-sm-12">
+									<?php
+									if(isset($data) && $data == "success"){
+									?>
+									<p style="text-align:center;background:#5cb85c;border:1px solid #CCC;border-radius:5px;padding:5px;color:#fff;font-weight:bold;margin-left:15px;"> Added Successfully </p>
+									<?php
+									}else if(isset($data) && $data == "error"){
+									?>
+									<p style="text-align:center;background:#e54e53;border:1px solid #CCC;border-radius:5px;padding:5px;color:#fff;font-weight:bold;margin-left:15px;"> Error in Insertion </p>
+									<?php
+									}else if(isset($data) && $data == "customer_exist"){
+									?>
+									<p style="text-align:center;background:#4a89dc;border:1px solid #CCC;border-radius:5px;padding:5px;color:#fff;font-weight:bold;margin-left:15px;"> Customer Details Already Exist </p>
+									<?php
+									}
+									?>
+								</div>
 
                                 <div class="portlet-title">
                                     <div class="caption">
