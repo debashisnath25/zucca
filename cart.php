@@ -149,7 +149,7 @@
                                             </table>
                                         </div>
                                         <div class="product-proceed-to-checkout">
-                                            <a class="btn btn-lg btn-color form-full-width" href="checkout.html">Proceed to checkout</a>
+                                            <a class="btn btn-lg btn-color form-full-width" href="checkout.php">Proceed to checkout</a>
                                         </div>
                                     </div>
                                 </div>
