@@ -1,17 +1,25 @@
 <?php
 include('config.php');
-
-if(isset($_POST['submit_category']))
+$seller_id = $_SESSION['user_id'];
+if(isset($_POST['submit_docs']))
 {
-	$cat_type = $_POST['cat_type'];
-	$cat_name = $_POST['cat_name'];
-	$tmp_image = $_FILES['cat_image']['tmp_name'];
-	$image = $_FILES['cat_image']['name'];
-	$save_image = rand(99,9999).$image;
-	move_uploaded_file($tmp_image,"uploads/".$save_image);
+	$tmp_vote = $_FILES['vote']['tmp_name'];
+	$vote = $_FILES['vote']['name'];
+	$save_vote = rand(99,9999).$vote;
+	move_uploaded_file($tmp_vote,"documents/".$save_vote);
+	
+	$tmp_pan = $_FILES['pan']['tmp_name'];
+	$pan = $_FILES['pan']['name'];
+	$save_pan = rand(99,9999).$pan;
+	move_uploaded_file($tmp_pan,"documents/".$save_pan);
 
-	$add_cat_image = mysqli_query($mysqli,"INSERT INTO category Values ('','$cat_type','$cat_name','$save_image','')");
-	if($add_cat_image){
+	$tmp_trade = $_FILES['trade']['tmp_name'];
+	$trade = $_FILES['trade']['name'];
+	$save_trade = rand(99,9999).$trade;
+	move_uploaded_file($tmp_trade,"documents/".$save_trade);
+
+	$add_docs = mysqli_query($mysqli,"UPDATE user SET voter_id='$save_vote', pancard='$save_pan', tradelicense='$save_trade' where user_id='$seller_id'");
+	if($add_docs){
 		$data = "success";
 	}else{
 		$data = "error";
@@ -29,7 +37,7 @@ if(isset($_POST['submit_category']))
 
     <head>
         <meta charset="utf-8" />
-        <title>Zucca | Seller Approval</title>
+        <title>Zucca | Upload Documents</title>
         <?php include('metalinks.php'); ?>
 		<style>
 		  .hidden {
@@ -63,13 +71,13 @@ if(isset($_POST['submit_category']))
                                 <i class="fa fa-circle"></i>
                             </li>
                             <li>
-                                <span>Seller Approval</span>
+                                <span>Upload Documents</span>
                             </li>
                         </ul>
                     </div>
                     <!-- END PAGE BAR -->
                     <!-- BEGIN PAGE TITLE-->
-                    <h3 class="page-title"> Seller Approval</h3>
+                    <h3 class="page-title">Upload Documents</h3>
                     <!-- END PAGE TITLE-->
                     <!-- END PAGE HEADER-->
                     <div class="row">
@@ -97,7 +105,7 @@ if(isset($_POST['submit_category']))
                                 <div class="portlet-title">
                                     <div class="caption">
                                         <i class="icon-home font-dark"></i>
-                                        <span class="caption-subject font-dark sbold uppercase">Seller Approval</span>
+                                        <span class="caption-subject font-dark sbold uppercase">Seller Documents Upload</span>
                                     </div>
                                 </div>
                                 <div class="portlet-body">
@@ -105,57 +113,86 @@ if(isset($_POST['submit_category']))
                                     <form  class="form-horizontal" method="POST" enctype="multipart/form-data">
                                         <div class="form-body">                                           
 											<div class="col-md-12" style="padding-top:30px;" >
-												<div class="col-md-6">													
-														<div class="form-group last">
-															<label class="control-label col-md-4">Voter ID</label>
-																  <div class="col-md-8 ">															
-																		<div class="col-md-12">											
-																			<a href="uploads/internet-bill-format.pdf" class="">click here to download</a>																			
-																			</div>
-																		</div>
-																	</div>
-														<div class="form-group last">
-															<label class="control-label col-md-4">PAN Card</label>
-																  <div class="col-md-8 ">															
-																		<div class="col-md-12">											
-																			<a href="uploads/internet-bill-format.pdf" class="">click here to download</a>																			
-																			</div>
-																		</div>
-																	</div>
-														<div class="form-group last">
-															<label class="control-label col-md-4">Trade License</label>
-																  <div class="col-md-8 ">															
-																		<div class="col-md-12">											
-																			<a href="uploads/internet-bill-format.pdf" class="">click here to download</a>																			
-																			</div>
-																		</div>
-																	</div>
+												<div class="col-md-4">
+													<div class="form-group">
+														<label class="control-label col-md-4">Voter ID
+															<span class="required"> * </span>
+														</label>
+														</div>
+														<div class="col-md-8 ">
+															<div class="col-md-12">
+															<div class="fileinput fileinput-new" data-provides="fileinput">
+																<div class="fileinput-new thumbnail" >
+																	<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" /> </div>
+																<div class="fileinput-preview fileinput-exists thumbnail" style="width: 335px; height: 255px;"> </div>
+																<br/>
+																	<span class="btn default btn-file">
+																		<span class="fileinput-new"> Select image </span>
+																		<span class="fileinput-exists"> Change </span>
+																		<input type="file" name="vote" required style="width: 335px; height: 255px;"> 
+																	</span>
+																<a href="javascript:;" class="btn yellow fileinput-exists" data-dismiss="fileinput"> Remove </a>
 																</div>
-
-											<div class="col-md-6" style="padding-top:45px">
-											 <div class="form-group last">
-                                                <label class="control-label col-md-4">Update Status</label>
-                                                <div class="col-md-8">
-													<div class="input-group">														
-														<select name="cat_type" class="form-control">
-														<option value="" selected disabled>Choose Status</option>
-														<option value="men">Active</option>
-														<option value="women">Inactive</option>
-														<option value="kids">Pending</option>
-														</select>
+															</div>												
+														</div>												
+													 </div>
+													
+													<div class="col-md-4">
+														<div class="form-group">
+														<label class="control-label col-md-4">PAN Card
+															<span class="required"> * </span>
+														</label>
+														</div>
+														<div class="col-md-8 ">															
+															<div class="col-md-12">
+															<div class="fileinput fileinput-new" data-provides="fileinput">
+																<div class="fileinput-new thumbnail" >
+																	<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" /> </div>
+																<div class="fileinput-preview fileinput-exists thumbnail" style="width: 335px; height: 255px;"> </div>
+																<br/>
+																	<span class="btn default btn-file">
+																		<span class="fileinput-new"> Select image </span>
+																		<span class="fileinput-exists"> Change </span>
+																		<input type="file" name="pan" required style="width: 335px; height: 255px;"> 
+																	</span>
+																<a href="javascript:;" class="btn yellow fileinput-exists" data-dismiss="fileinput"> Remove </a>
+																</div>
+															</div>												
+														</div>												
+													 </div>
+																										
+													<div class="col-md-4">
+													<div class="form-group">
+														<label class="control-label col-md-4">Trade License
+															<span class="required"> * </span>
+														</label>
+														</div>
+														<div class="col-md-8 ">															
+															<div class="col-md-12">
+															<div class="fileinput fileinput-new" data-provides="fileinput">
+																<div class="fileinput-new thumbnail" >
+																	<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" /> </div>
+																<div class="fileinput-preview fileinput-exists thumbnail" style="width: 335px; height: 255px;"> </div>
+																<br/>
+																	<span class="btn default btn-file">
+																		<span class="fileinput-new"> Select image </span>
+																		<span class="fileinput-exists"> Change </span>
+																		<input type="file" name="trade" required style="width: 335px; height: 255px;"> 
+																	</span>
+																<a href="javascript:;" class="btn yellow fileinput-exists" data-dismiss="fileinput"> Remove </a>
+																</div>
+															</div>												
+														</div>												
+													</div>																		
+												
+											  </div>
+												<div class="form-actions">
+													<div class="row">
+														<div class="col-md-offset-6 col-md-6" style="margin-top:40px;">
+															<input type="submit" class="btn green" name="submit_docs" value="Submit">
+														</div>
 													</div>
 												</div>
-                                            </div>
-										</div>											
-										</div>
-                                      </div>
-                                        <div class="form-actions">
-                                            <div class="row">
-                                                <div class="col-md-offset-4 col-md-6">
-                                                    <input type="submit" class="btn green" name="submit_category" value="Submit">
-                                                </div>
-                                            </div>
-                                        </div>
                                     </form>
                                     <!-- END FORM-->
                                 </div>

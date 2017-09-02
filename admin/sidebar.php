@@ -45,21 +45,21 @@
                              <li class="nav-item start <?php if($page_name == 'listing_seller.php'){ ?>active open<?php } ?>">
 								<a href="listing_seller.php" class="nav-link nav-toggle">
 									<i class="icon-home"></i>
-									<span class="title">Listing Sellers</span>
+									<span class="title">Sellers</span>
 									<span class="selected"></span>
 								</a>
 							 </li>
 							<li class="nav-item start <?php if($page_name == 'listing_associates.php'){ ?>active open<?php } ?>">
 								<a href="listing_associates.php" class="nav-link nav-toggle">
 									<i class="icon-home"></i>
-									<span class="title">Listing Associates</span>
+									<span class="title">Associates</span>
 									<span class="selected"></span>
 								</a>
 							</li>
 							<li class="nav-item start <?php if($page_name == 'listing_customer.php'){ ?>active open<?php } ?>">
 								<a href="listing_customer.php" class="nav-link nav-toggle">
 									<i class="icon-home"></i>
-									<span class="title">Listing Customers</span>
+									<span class="title">Customers</span>
 									<span class="selected"></span>
 								</a>
 							 </li>								
@@ -155,7 +155,15 @@
                         </li>
 				<?php
 				}else if($fetch_user_type['user_type']=='seller'){
-				?>
+				?>		
+						 <li class="nav-item start <?php if($page_name == 'dashboard.php'){ ?>active open<?php } ?>">
+                            <a href="dashboard.php" class="nav-link nav-toggle">
+                                <i class="icon-home"></i>
+                                <span class="title">Dashboard</span>
+                                <span class="selected"></span>
+                            </a>
+                        </li>
+
 						 <li class="nav-item start <?php if($page_name == 'add_product.php' || $page_name == 'listing_product.php' || $page_name == 'view_product.php' || $page_name == 'edit_product.php') { ?>active open<?php } ?>  ">
                             <a href="javascript:void(0);" class="nav-link nav-toggle">
                                 <i class="icon-briefcase"></i>
@@ -167,16 +175,30 @@
                                     <a href="add_product.php" class="nav-link nav-toggle">
 										<i class="icon-home"></i>
                                         <span class="title">Add Product</span>
-                                    </a>
-                                </li>
-								<li class="nav-item <?php if($page_name == 'listing_product.php' || $page_name == 'view_product.php' || $page_name == 'edit_product.php') { ?>active selected<?php } ?> ">
-                                    <a href="listing_product.php" class="nav-link nav-toggle">
-										<i class="icon-compass"></i>
-                                        <span class="title">Listing Product</span>
-                                    </a>
-                                </li>
-                            </ul>
+							</a>
+						</li>
+						<li class="nav-item <?php if($page_name == 'listing_product.php' || $page_name == 'view_product.php' || $page_name == 'edit_product.php') { ?>active selected<?php } ?> ">
+								<a href="listing_product.php" class="nav-link nav-toggle">
+									<i class="icon-compass"></i>
+									<span class="title">Listing Product</span>
+								</a>
+							</li>
+						</ul>
                         </li>
+						<li class="nav-item start <?php if($page_name == 'listing_customer.php'){ ?>active open<?php } ?>">
+							<a href="listing_customer.php" class="nav-link nav-toggle">
+									<i class="fa fa-eye"></i>
+									<span class="title">Customers</span>
+								<span class="selected"></span>
+							</a>
+						</li>	
+						<li class="nav-item start <?php if($page_name == 'listing_customer.php'){ ?>active open<?php } ?>">
+							<a href="upload_seller_docs.php" class="nav-link nav-toggle">
+									<i class="fa fa-eye"></i>
+									<span class="title">Upload documents</span>
+								<span class="selected"></span>
+							</a>
+						</li>	
 						<li class="nav-item start <?php if($page_name == 'user_settings.php') { ?>active open<?php } ?>">
                             <a href="user_settings.php" class="nav-link">
                                 <i class="fa fa-cog"></i>
