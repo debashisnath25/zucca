@@ -207,8 +207,43 @@
                             </a>
                         </li>
 				<?php
+					}else if($fetch_user_type['user_type']=='associate'){
+				?> 
+					
+						<li class="nav-item start <?php if($page_name == 'listing_seller.php'){ ?>active open<?php } ?>">
+								<a href="listing_seller.php" class="nav-link nav-toggle">
+									<i class="icon-home"></i>
+									<span class="title">My Sellers</span>
+									<span class="selected"></span>
+								</a>
+						</li>
+						 <li class="nav-item start <?php if($page_name == 'approve_sellers.php'){ ?>active open<?php } ?>">
+                            <a href="approve_sellers.php" class="nav-link nav-toggle">
+                                <i class="icon-home"></i>
+                                <span class="title">Approve Sellers</span>
+                                <span class="selected"></span>
+                            </a>
+                        </li>
+						 <li class="nav-item start <?php if($page_name == 'approve_product.php'){ ?>active open<?php } ?>">
+                            <a href="approve_product.php" class="nav-link nav-toggle">
+                                <i class="icon-home"></i>
+                                <span class="title">Approve Products</span>
+                                <span class="selected"></span>
+                            </a>
+                        </li>
+						<li class="nav-item start <?php if($page_name == 'user_settings.php') { ?>active open<?php } ?>">
+                            <a href="user_settings.php" class="nav-link">
+                                <i class="fa fa-cog"></i>
+                                <span class="title">Settings</span>
+                                <span class="selected"></span>
+                            </a>
+                        </li>
+
+						
+				<?php
 					}
-				?>        <!--<li class="nav-item  ">
+				?> 
+				<!--<li class="nav-item  ">
                             <a href="?p=" class="nav-link nav-toggle">
                                 <i class="icon-wallet"></i>
                                 <span class="title">Plans</span>

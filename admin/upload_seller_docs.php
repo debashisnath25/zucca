@@ -153,7 +153,7 @@ if(isset($_POST['submit_docs']))
 																	<span class="btn default btn-file">
 																		<span class="fileinput-new"> Select image </span>
 																		<span class="fileinput-exists"> Change </span>
-																		<input type="file" name="pan" required style="width: 335px; height: 255px;"> 
+																		<input type="file" name="pan" required style="width: 135px; height: 155px;"> 
 																	</span>
 																<a href="javascript:;" class="btn yellow fileinput-exists" data-dismiss="fileinput"> Remove </a>
 																</div>
@@ -163,7 +163,7 @@ if(isset($_POST['submit_docs']))
 																										
 													<div class="col-md-4">
 													<div class="form-group">
-														<label class="control-label col-md-4">Trade License
+														<label class="control-label col-md-5">Trade License
 															<span class="required"> * </span>
 														</label>
 														</div>

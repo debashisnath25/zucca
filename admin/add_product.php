@@ -13,7 +13,7 @@ if(isset($_POST['submit_product']))
 
 	$tmp_image = $_FILES['pro_image']['tmp_name'];
 	$image = $_FILES['pro_image']['name'];
-	$add_product = mysqli_query($mysqli,"INSERT INTO product Values ('','$pro_name','$desc_short','$desc','$sell_price','$cat_type','$sub_cat_type','$brand_type','active','')");
+	$add_product = mysqli_query($mysqli,"INSERT INTO product Values ('','$pro_name','$desc_short','$desc','$sell_price','$cat_type','$sub_cat_type','$brand_type','pending','')");
 	if($add_product){
 		
 
