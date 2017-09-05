@@ -1,3 +1,10 @@
+<?php
+	include ("config.php");
+	$id = $_SESSION['id'];
+	$product_id = $_GET['product_id'];
+	
+?>
+
 <head>
    <meta charset="utf-8">
     <title>ZUCCA - Clothing Collections</title>
@@ -233,6 +240,13 @@
 
                     <!-- Navigation Menu -->
                     <nav class="navigation-menu">
+				<?php
+				$select_query = mysqli_query($mysqli,"select * from product by product_id desc");
+				while($fetch_query = mysqli_fetch_array($select_query))
+				$select_query = mysqli_query($mysqli,"select * from image_name by productimage_id desc");
+				while($fetch_query = mysqli_fetch_array($select_query))
+				{
+				?>
                         <ul>
                             <li>
                                 <a href="index.php">Home</a>
@@ -245,13 +259,13 @@
                                         <ul class="row">
                                             <!--Grid 1-->
                                             <li class="nav-dropdown-grid">
-                                                <h6>New In</h6>
+                                                <h6><?php echo $fetch_query['product_name'];?></h6>
                                                 <ul>
-                                                    <li><a href="#">New In Clothing</a></li>
-                                                    <li><a href="#">New In Shoes<span class="new-label">New</span></a></li>
-                                                    <li><a href="#">New In Bags</a></li>
-                                                    <li><a href="#">New In Watches</a></li>
-                                                    <li><a href="#">New In Accesories</a></li>
+                                                    <li><a href="#"><?php echo $fetch_query['product_title'];?></a></li>
+                                                    <li><a href="#"><?php echo $fetch_query['product_title'];?><span class="new-label">New</span></a></li>
+                                                    <li><a href="#"><?php echo $fetch_query['product_title'];?></a></li>
+                                                    <li><a href="#"><?php echo $fetch_query['product_title'];?></a></li>
+                                                    <li><a href="#"><?php echo $fetch_query['product_title'];?></a></li>
                                                 </ul>
                                             </li>
                                             <!--Grid 2-->
@@ -460,6 +474,10 @@
                                 <a href="contact_us.php">Contact</a>
                             </li>
                         </ul>
+						
+				<?php
+				}
+				?>
                     </nav>
                     <!-- End Navigation Menu -->
 
