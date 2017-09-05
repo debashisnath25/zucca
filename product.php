@@ -1,3 +1,10 @@
+<?php
+	include ("config.php");
+	$id = $_SESSION['id'];
+	$product_id = $_GET['product_id'];
+	
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,10 +29,17 @@
             <!-- Bread Crumb -->
 
             <!-- Page Content -->
-            <section id="product-ID_XXXX" class="content-page single-product-content">
+            <section id="product-id" class="content-page single-product-content">
 
                 <!-- Product -->
                 <div id="product-detail" class="container">
+				<?php
+				$select_query = mysqli_query($mysqli,"select * from product by product_id desc");
+				while($fetch_query = mysqli_fetch_array($select_query))
+				$select_query = mysqli_query($mysqli,"select * from product_image by productimage_id desc");
+				while($fetch_query = mysqli_fetch_array($select_query))
+				{
+				?>
                     <div class="row">
                         <div class="col-lg-9 col-md-12 product-content sidebar-position-right">
                             <div class="row">
@@ -35,33 +49,33 @@
                                         <!-- Slick Image Slider -->
                                         <div class="product-image-slider product-image-gallery" id="product-image-gallery" data-pswp-uid="3">
                                             <div class="item">
-                                                <a class="product-gallery-item" href="images/product_12547007_1.jpg" data-size="" data-med="images/product_12547007_1.jpg" data-med-size="">
-                                                    <img src="images/product_12547007_1.jpg" alt="image 1" />
+                                                <a class="product-gallery-item" href="admin/uploads/<?php echo $fetch_query['product_image'];?>" data-size="" data-med="admin/uploads/<?php echo $fetch_query['product_image'];?>" data-med-size="">
+                                                    <img src="admin/uploads/<?php echo $fetch_query['product_image'];?>" alt="image 1" />
                                                 </a>
                                             </div>
                                             <div class="item">
-                                                <a class="product-gallery-item" href="images/product_12547007_2.jpg" data-size="" data-med="images/product_12547007_2.jpg" data-med-size="">
-                                                    <img src="images/product_12547007_2.jpg" alt="image 2" />
+                                                <a class="product-gallery-item" href="admin/uploads/<?php echo $fetch_query['product_image'];?>" data-size="" data-med="admin/uploads/<?php echo $fetch_query['product_image'];?>" data-med-size="">
+                                                    <img src="admin/uploads/<?php echo $fetch_query['product_image'];?>" alt="image 2" />
                                                 </a>
                                             </div>
                                             <div class="item">
-                                                <a class="product-gallery-item" href="images/product_12547007_3.jpg" data-size="" data-med="images/product_12547007_3.jpg" data-med-size="">
-                                                    <img src="images/product_12547007_3.jpg" alt="image 3" />
+                                                <a class="product-gallery-item" href="images/product_12547007_3.jpg" data-size="" data-med="admin/uploads/<?php echo $fetch_query['product_image'];?>" data-med-size="">
+                                                    <img src="admin/uploads/<?php echo $fetch_query['product_image'];?>" alt="image 3" />
                                                 </a>
                                             </div>
                                             <div class="item">
-                                                <a class="product-gallery-item" href="images/product_12547007_4.jpg" data-size="" data-med="images/product_12547007_4.jpg" data-med-size="">
-                                                    <img src="images/product_12547007_4.jpg" alt="image 4" />
+                                                <a class="product-gallery-item" href="admin/uploads/<?php echo $fetch_query['product_image'];?>" data-size="" data-med="admin/uploads/<?php echo $fetch_query['product_image'];?>" data-med-size="">
+                                                    <img src="admin/uploads/<?php echo $fetch_query['product_image'];?>" alt="image 4" />
                                                 </a>
                                             </div>
                                             <div class="item">
-                                                <a class="product-gallery-item" href="images/product_12547007_5.jpg" data-size="" data-med="images/product_12547007_5.jpg" data-med-size="">
-                                                    <img src="images/product_12547007_5.jpg" alt="image 5" />
+                                                <a class="product-gallery-item" href="admin/uploads/<?php echo $fetch_query['product_image'];?>" data-size="" data-med="admin/uploads/<?php echo $fetch_query['product_image'];?>" data-med-size="">
+                                                    <img src="admin/uploads/<?php echo $fetch_query['product_image'];?>" alt="image 5" />
                                                 </a>
                                             </div>
                                             <div class="item">
-                                                <a class="product-gallery-item" href="images/product_12547007_6.jpg" data-size="" data-med="images/product_12547007_6.jpg" data-med-size="">
-                                                    <img src="images/product_12547007_6.jpg" alt="image 1" />
+                                                <a class="product-gallery-item" href="admin/uploads/<?php echo $fetch_query['product_image'];?>" data-size="" data-med="admin/uploads/<?php echo $fetch_query['product_image'];?>" data-med-size="">
+                                                    <img src="admin/uploads/<?php echo $fetch_query['product_image'];?>" alt="image 1" />
                                                 </a>
                                             </div>
                                         </div>
@@ -75,22 +89,22 @@
                                     <!-- Slick Thumb Slider -->
                                     <div class="product-image-slider-thumbnails">
                                         <div class="item">
-                                            <img src="images/product_12547007_1.jpg" alt="image 1" />
+                                            <img src="admin/uploads/<?php echo $fetch_query['product_image'];?>" alt="image 1" />
                                         </div>
                                         <div class="item">
-                                            <img src="images/product_12547007_2.jpg" alt="image 1" />
+                                            <img src="admin/uploads/<?php echo $fetch_query['product_image'];?>" alt="image 1" />
                                         </div>
                                         <div class="item">
-                                            <img src="images/product_12547007_3.jpg" alt="image 1" />
+                                            <img src="admin/uploads/<?php echo $fetch_query['product_image'];?>" alt="image 1" />
                                         </div>
                                         <div class="item">
-                                            <img src="images/product_12547007_4.jpg" alt="image 1" />
+                                            <img src="admin/uploads/<?php echo $fetch_query['product_image'];?>" alt="image 1" />
                                         </div>
                                         <div class="item">
-                                            <img src="images/product_12547007_5.jpg" alt="image 1" />
+                                            <img src="admin/uploads/<?php echo $fetch_query['product_image'];?>" alt="image 1" />
                                         </div>
                                         <div class="item">
-                                            <img src="images/product_12547007_6.jpg" alt="image 1" />
+                                            <img src="admin/uploads/<?php echo $fetch_query['product_image'];?>" alt="image 1" />
                                         </div>
                                     </div>
                                     <!-- End Slick Thumb Slider -->
@@ -100,7 +114,7 @@
                                 <!-- Product Content -->
                                 <div class="col-lg-6 col-md-12 col-sm-12 mb-30">
                                     <div class="product-page-content">
-                                        <h2 class="product-title">LP - Black Solid Polo T-Shirt</h2>
+                                        <h2 class="product-title"><?php echo $fetch_query['product_title'];?></h2>
                                         <div class="product-rating">
                                             <div class="star-rating" itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating" title="Rated 4 out of 5">
                                                 <span style="width: 60%"></span>
@@ -108,10 +122,10 @@
                                             <div class="product-rating-count">( <span class="count">3</span> Reviews )</div>
                                         </div>
                                         <div class="product-price">
-                                            <del>$499.00</del><span><span class="product-price-sign">$</span><span class="product-price-text">399.00</span></span>
+                                            <del><?php echo $fetch_query['selling_price'];?></del><span><span class="product-price-sign">$</span><span class="product-price-text"><?php echo $fetch_query['selling_price'];?></span></span>
                                         </div>
                                         <p class="product-description">
-                                            When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic remaining essentially unchanged.
+                                           <?php echo $fetch_query['product_desc'];?>
                                         </p>
                                         <div class="row product-filters">
                                             <form class="col-md-12 filters-color">
@@ -250,7 +264,9 @@
                             </div>
                         </div>
                     </div>
-
+				<?php
+				}
+				?>
                 </div>
                 <!-- End Product -->
 

@@ -89,35 +89,24 @@
 						<div class="col-md-4 col-sm-6">
 						<div class="contact-address">
 						
-						<div class="same orange_box" onclick="location.href='/closed-deals';">
-						<img  id="myImg" src="images/install.png" class="rounded mx-auto d-block img-responsive hvr-underline-from-center" style="position:relative;" alt="image">
-					<strong style="color:#f48342;"> 5 minute Setup</strong><p> </p><p>We connect our Sale Side Clients with the right Buyers to ensure a quick sale and to maximize ...</p>
+						<div class="same orange_box" style="text-align:center" onclick="location.href='/closed-deals';">
+						<img  id="myImg" src="images/install.png" class="rounded mx-auto d-block img-responsive hvr-underline-from-center" style="position:relative; height:150px;" alt="image">
+					<strong style="color:#f48342;"> 5 minute Setup</strong>
 						</div>
 						<br />
 						
-					<div class="same orange_box" onclick="location.href='/closed-deals';">
-					<img  id="myImg" src="images/access.png" class="rounded mx-auto d-block img-responsive hvr-underline-from-center" style="position:relative;" alt="image">
-					<strong style="color:#f48342;"> Easy and Fast Approval</strong><p> </p><p>We connect our Sale Side Clients with the right Buyers to ensure a quick sale and to maximize ...</p>
+					<div class="same orange_box" style="text-align:center" onclick="location.href='/closed-deals';">
+					<img  id="myImg" src="images/access.png" class="rounded mx-auto d-block img-responsive hvr-underline-from-center" style="position:relative; height:150px;" alt="image">
+					<strong style="color:#f48342;"> Easy and Fast Approval</strong>
 						</div>
 						<br />
 						
-					<div class="same orange_box" onclick="location.href='/closed-deals';">
-					<img  id="myImg" src="images/install.png" class="rounded mx-auto d-block img-responsive hvr-underline-from-center" style="position:relative;" alt="image">
-					<strong style="color:#f48342;"> Fast and Secure Payments</strong><p> </p><p>We connect our Sale Side Clients with the right Buyers to ensure a quick sale and to maximize ...</p>
+					<div class="same orange_box" style="text-align:center" onclick="location.href='/closed-deals';">
+					<img  id="myImg" src="images/install.png" class="rounded mx-auto d-block img-responsive hvr-underline-from-center" style="position:relative; height:150px;" alt="image">
+					<strong style="color:#f48342;"> Fast and Secure Payments</strong>
 						</div>
 						<br />
 						
-					<div class="same orange_box" onclick="location.href='/closed-deals';">
-					<img  id="myImg" src="images/install.png" class="rounded mx-auto d-block img-responsive hvr-underline-from-center" style="position:relative;" alt="image">
-					<strong style="color:#f48342;"> Increase Sales and Customer Base</strong><p> </p><p>We connect our Sale Side Clients with the right Buyers to ensure a quick sale and to maximize ...</p>
-						</div>
-						<br />
-						
-					<div class="same orange_box" onclick="location.href='/closed-deals';">
-					<img  id="myImg" src="images/install.png" class="rounded mx-auto d-block img-responsive hvr-underline-from-center" style="position:relative;" alt="image">
-					<strong style="color:#f48342;"> Increase Sales and Customer Base</strong><p> </p><p>We connect our Sale Side Clients with the right Buyers to ensure a quick sale and to maximize ...</p>
-						</div>
-						<br />
 						</div>
 						</div>
                     </div>
