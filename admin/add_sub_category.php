@@ -107,10 +107,10 @@ if(isset($_POST['submit_sub_category']))
 									<div class="col-md-7">
 									
 										<div class="form-group">
-                                                <label class="control-label col-md-3">Category Type
+                                                <label class="control-label col-md-4">Category Type
                                                     <span class="required"> * </span>
                                                 </label>
-                                                <div class="col-md-9">
+                                                <div class="col-md-8">
 													<div class="input-group col-md-12">
 														<span class="input-group-addon">
 															<i class="fa fa-briefcase"></i>
@@ -122,7 +122,7 @@ if(isset($_POST['submit_sub_category']))
 															while($fetch_cat_name = mysqli_fetch_array($get_cat_name))
 															{
 															?>
-															<option value="<?php echo $fetch_cat_name['cat_id'];?>" ><?php echo $fetch_cat_name['category_name'];?>
+															<option value="<?php echo $fetch_cat_name['cat_id'];?>" ><?php echo $fetch_cat_name['cat_type'];?>&nbsp;<?php echo $fetch_cat_name['category_name'];?>
 															</option>
 															<?php
 															}
@@ -134,10 +134,10 @@ if(isset($_POST['submit_sub_category']))
 
 										
                                             <div class="form-group">
-                                                <label class="control-label col-md-3">Sub-Category Name
+                                                <label class="control-label col-md-4">Sub-Category Name
                                                     <span class="required"> * </span>
                                                 </label>
-                                                <div class="col-md-9">
+                                                <div class="col-md-8">
 													<div class="input-group">
 														<span class="input-group-addon">
 															<i class="fa fa-bookmark"></i>

@@ -111,29 +111,29 @@ if(isset($_POST['submit_category']))
 										<div class="col-md-6">
 
 											<div class="form-group">
-                                                <label class="control-label col-md-3">Category Type
+                                                <label class="control-label col-md-4">Category Type
                                                     <span class="required"> * </span>
                                                 </label>
-                                                <div class="col-md-9">
+                                                <div class="col-md-8">
 													<div class="input-group">
 														<span class="input-group-addon">
 															<i class="fa fa-bookmark"></i>
 														</span>
 														<select name="cat_type" class="form-control">
 														<option value="" selected disabled>Choose Type</option>
-														<option value="men">MEN</option>
-														<option value="women">WOMEN</option>
-														<option value="kids">KIDS</option>
+														<option value="Man">MAN</option>
+														<option value="Woman">WOMAN</option>
+														<option value="Kids">KIDS</option>
 														</select>
 													</div>
 												</div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="control-label col-md-3">Category Name
+                                                <label class="control-label col-md-4">Category Name
                                                     <span class="required"> * </span>
                                                 </label>
-                                                <div class="col-md-9">
+                                                <div class="col-md-8">
 													<div class="input-group">
 														<span class="input-group-addon">
 															<i class="fa fa-bookmark"></i>
@@ -144,10 +144,10 @@ if(isset($_POST['submit_category']))
                                             </div>	
 											
 											<div class="form-group">
-												<label class="control-label col-md-3">Image
+												<label class="control-label col-md-4">Image
 													<span class="required"> * </span>
 												</label>
-												<div class="col-md-9 ">
+												<div class="col-md-8 ">
 													
 													<div class="col-md-12">
 													<div class="fileinput fileinput-new" data-provides="fileinput">

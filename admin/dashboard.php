@@ -60,9 +60,9 @@ include ("config.php");
 
 						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div style="height:60px;width:60px;" class="col-md-6">
-								<a href="listing_category.php" ><img src="images/1467998568_resolutions-23.png" style="height:50px;width:50px;" /></a>
+								<a href="listing_category.php" ><img src="images/1467998119_categories.png" style="height:50px;width:50px;" /></a>
 							</div>
-							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
+							<div class="col-md-7" style="font-size:13px;padding-top:17px;">
 								<a href="listing_category.php" style="color:#000;">Listing Category</a>
 							</div>
                         </div>					
@@ -81,7 +81,7 @@ include ("config.php");
                     <div class="row">
 						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div style="height:60px;width:60px;" class="col-md-6">
-								<a href="add_sub_category.php" ><img src="images/1467997287_Home-icon.png" style="height:50px;width:50px;" /></a>
+								<a href="add_sub_category.php" ><img src="images/bookmark-add.png" style="height:50px;width:50px;" /></a>
 							</div>
 							<div class="col-md-8" style="font-size:13px;padding-top:17px;">
 								<a href="add_sub_category.php" style="color:#000;">Add Sub-Category</a>
@@ -90,7 +90,7 @@ include ("config.php");
 
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div style="height:60px;width:60px;" class="col-md-6">
-								<a href="listing_sub_category.php" ><img src="images/1467997287_Home-icon.png" style="height:50px;width:50px;" /></a>
+								<a href="listing_sub_category.php" ><img src="images/1467998119_categories.png" style="height:50px;width:50px;" /></a>
 							</div>
 							<div class="col-md-8" style="font-size:12px;padding-top:17px;">
 								<a href="listing_sub_category.php" style="color:#000;">Listing Sub-Category</a>
@@ -117,7 +117,7 @@ include ("config.php");
                    <div class="row">
 						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div style="height:60px;width:60px;" class="col-md-6">
-								<a href="add_brand.php" ><img src="images/1467997287_Home-icon.png" style="height:50px;width:50px;" /></a>
+								<a href="add_brand.php" ><img src="images/bookmark-add.png" style="height:50px;width:50px;" /></a>
 							</div>
 							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
 								<a href="add_brand.php" style="color:#000;">Add Brand</a>
@@ -126,7 +126,7 @@ include ("config.php");
 
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div style="height:60px;width:60px;" class="col-md-6">
-								<a href="listing_brand.php" ><img src="images/1467997287_Home-icon.png" style="height:50px;width:50px;" /></a>
+								<a href="listing_brand.php" ><img src="images/1467998119_categories.png" style="height:50px;width:50px;" /></a>
 							</div>
 							<div class="col-md-6" style="font-size:12px;padding-top:17px;">
 								<a href="listing_brand.php" style="color:#000;">Listing Brand</a>
@@ -148,7 +148,7 @@ include ("config.php");
                     <div class="row">
 						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div style="height:60px;width:60px;" class="col-md-6">
-								<a href="add_product.php" ><img src="images/1467997287_Home-icon.png" style="height:50px;width:50px;" /></a>
+								<a href="add_product.php" ><img src="images/bookmark-add.png" style="height:50px;width:50px;" /></a>
 							</div>
 							<div class="col-md-6" style="font-size:13px;padding-top:17px;">
 								<a href="add_product.php" style="color:#000;">Add Product</a>
@@ -157,7 +157,7 @@ include ("config.php");
 
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div style="height:60px;width:60px;" class="col-md-6">
-								<a href="listing_product.php" ><img src="images/1467997287_Home-icon.png" style="height:50px;width:50px;" /></a>
+								<a href="listing_product.php" ><img src="images/1467998119_categories.png" style="height:50px;width:50px;" /></a>
 							</div>
 							<div class="col-md-6" style="font-size:12px;padding-top:17px;">
 								<a href="listing_product.php" style="color:#000;">Listing Product</a>

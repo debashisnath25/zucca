@@ -100,14 +100,14 @@ if(isset($_GET['delete_id'])){
                                 <i class="fa fa-circle"></i>
                             </li>
                             <li>
-                                <span>Add Product</span>
+                                <span>Edit Product</span>
                             </li>
                         </ul>
                     </div>
                     <!-- END PAGE BAR -->
                     <!-- BEGIN PAGE TITLE-->
                     <h3 class="page-title"> Product -
-                        <small>Add Product</small>
+                        <small>Edit Product</small>
                     </h3>
                     <!-- END PAGE TITLE-->
                     <!-- END PAGE HEADER-->
@@ -137,7 +137,7 @@ if(isset($_GET['delete_id'])){
                                 <div class="portlet-title">
                                     <div class="caption">
                                         <i class="icon-home font-dark"></i>
-                                        <span class="caption-subject font-dark sbold uppercase">Add Product</span>
+                                        <span class="caption-subject font-dark sbold uppercase">Edit Product</span>
                                     </div>
                                 </div>
                                 <div class="portlet-body">
@@ -150,8 +150,8 @@ if(isset($_GET['delete_id'])){
 									$fetch_prod_details = mysqli_fetch_array($get_product_details);
 									?>
                                             
-									<div class="col-md-12" style="padding-top:30px;" >
-										<div class="col-md-5">
+									<div class="col-md-12" style="padding-top:30px;" >									
+										<div class="col-md-7">
                                             <div class="form-group">
                                                 <label class="control-label col-md-4">Product Name
                                                     <span class="required"> * </span>
@@ -226,7 +226,7 @@ if(isset($_GET['delete_id'])){
 															while($fetch_cat_name = mysqli_fetch_array($get_cat_name))
 															{
 															?>
-															<option value="<?php echo $fetch_cat_name['cat_id'];?>" <?php echo(($fetch_prod_details['cat_id']==$fetch_cat_name['cat_id'])?'selected':'')?> ><?php echo $fetch_cat_name['category_name'];?>
+															<option value="<?php echo $fetch_cat_name['cat_id'];?>" <?php echo(($fetch_prod_details['cat_id']==$fetch_cat_name['cat_id'])?'selected':'')?> ><?php echo $fetch_cat_name['cat_type'];?>&nbsp;<?php echo $fetch_cat_name['category_name'];?>
 															</option>
 															<?php
 															}
@@ -300,10 +300,10 @@ if(isset($_GET['delete_id'])){
                                                 </div>
 											</div>
 										</div>
-										<div class="col-md-4">
+										<div class="col-md-5">
 											<div class="form-group last">
 												<label class="control-label col-md-3">Product Image </label>
-												<div class="col-md-9 ">
+												<div class="col-md-8">
 													<div class="addsz">
 													<div class="fileinput fileinput-new" data-provides="fileinput">
 														<?php
@@ -313,7 +313,7 @@ if(isset($_GET['delete_id'])){
 															while($fetch_images = mysqli_fetch_array($select_images))
 															{
 														?>
-														<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+														<div class="fileinput-new thumbnail" style="width: 150px; height: 100px;margin-top:20px;">
 															<img src="uploads/<?php echo $fetch_images['image_name'];?>" alt="" />
 															<a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
 														</div>
@@ -339,7 +339,7 @@ if(isset($_GET['delete_id'])){
 															<span class="btn default btn-file">
 																<span class="fileinput-new" > Select image </span>
 																<span class="fileinput-exists"> Change </span>
-																<input type="file" required name="pro_image[]" required style="width: 335px; height: 255px;"> </span>
+																<input type="file" required name="pro_image[]" style="width: 335px; height: 255px;"> </span>
 															<a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
 														</div>
 														<?php

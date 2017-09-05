@@ -93,18 +93,18 @@ if(isset($_POST['update_product']))
                     <div class="page-bar">
                         <ul class="page-breadcrumb">
                             <li>
-                                <a href="index.html">Home</a>
+                                <a href="listing_product.php">Home</a>
                                 <i class="fa fa-circle"></i>
                             </li>
                             <li>
-                                <span>Add Product</span>
+                                <span>View Product</span>
                             </li>
                         </ul>
                     </div>
                     <!-- END PAGE BAR -->
                     <!-- BEGIN PAGE TITLE-->
                     <h3 class="page-title"> Product -
-                        <small>Add Product</small>
+                        <small>View Product</small>
                     </h3>
                     <!-- END PAGE TITLE-->
                     <!-- END PAGE HEADER-->
@@ -134,7 +134,7 @@ if(isset($_POST['update_product']))
                                 <div class="portlet-title">
                                     <div class="caption">
                                         <i class="icon-home font-dark"></i>
-                                        <span class="caption-subject font-dark sbold uppercase">Add Product</span>
+                                        <span class="caption-subject font-dark sbold uppercase">View Product</span>
                                     </div>
                                 </div>
                                 <div class="portlet-body">
@@ -148,13 +148,13 @@ if(isset($_POST['update_product']))
 									?>
                                             
 									<div class="col-md-12" style="padding-top:30px;" >
-										<div class="col-md-8">
+										<div class="col-md-7">
                                             <div class="form-group">
                                                 <label class="control-label col-md-4">Product Name
                                                     <span class="required"> * </span>
                                                 </label>
                                                 <div class="col-md-8">
-													<div class="form-control">														
+													<div class="">														
 														<label><?php echo $fetch_prod_details['product_title'];?></label>
 													</div>
 												</div>
@@ -164,7 +164,7 @@ if(isset($_POST['update_product']))
                                                     <span class="required"> * </span>
                                                 </label>
                                                 <div class="col-md-8">
-													<div class="form-control">														
+													<div class="">														
 														<label><?php echo $fetch_prod_details['product_short_desc'];?></label>
 													</div>
 												</div>
@@ -174,7 +174,7 @@ if(isset($_POST['update_product']))
                                                     <span class="required"> * </span>
                                                 </label>
                                                 <div class="col-md-8">
-													<div class="form-control">														
+													<div class="">														
 														<label><?php echo $fetch_prod_details['product_desc'];?></label>
 													</div>
 												</div>
@@ -184,7 +184,7 @@ if(isset($_POST['update_product']))
                                                     <span class="required"> * </span>
                                                 </label>
                                                 <div class="col-md-8">
-													<div class="form-control">														
+													<div class="">														
 														<label><?php echo $fetch_prod_details['selling_price'];?></label>
 													</div>
 												</div>
@@ -194,7 +194,7 @@ if(isset($_POST['update_product']))
                                                     <span class="required"> * </span>
                                                 </label>
                                                 <div class="col-md-8">
-													<div class="form-control">														
+													<div class="">														
 														<label>
 															<?php 
 															$cat_id = $fetch_prod_details['cat_id'];
@@ -211,7 +211,7 @@ if(isset($_POST['update_product']))
                                                     <span class="required"> * </span>
                                                 </label>
                                                 <div class="col-md-8">
-													<div class="form-control">														
+													<div class="">														
 														<label>
 															<?php 
 															$subcat_id = $fetch_prod_details['subcat_id'];
@@ -228,7 +228,7 @@ if(isset($_POST['update_product']))
                                                     <span class="required"> * </span>
                                                 </label>
                                                 <div class="col-md-8">
-													<div class="form-control">														
+													<div class="">														
 														<label>
 															<?php 
 															$brand_id = $fetch_prod_details['brand_id'];
@@ -238,10 +238,11 @@ if(isset($_POST['update_product']))
 															?>															
 														</label>
 													</div>
-                                                </div>
+                                                </div>		
 											</div>
+										</div>
 
-
+										<div class="col-md-5">
 											<div class="form-group last">
 												<label class="control-label col-md-4">Product Image 
 												<span class="required"> * </span>
@@ -274,7 +275,7 @@ if(isset($_POST['update_product']))
 													</div>
 													
 												</div>
-												
+												</div>
 											</div>
 										</div>											
                                       </div>
@@ -282,7 +283,7 @@ if(isset($_POST['update_product']))
                                         <div class="form-actions">
                                             <div class="row">
                                                 <div class="col-md-offset-2 col-md-6">
-                                                    <a type="button" class="btn green">Back</a>
+                                                    <a href="listing_product.php" type="button" class="btn green">Back</a>
                                                 </div>
                                             </div>
                                         </div>

@@ -98,7 +98,7 @@ if(isset($_GET['del_subcat_id'])){
 												$cat_id = $fetch_sub_cat_details['cat_id'];
 												$get_cat_name = mysqli_query($mysqli,"select * from category where cat_id = '$cat_id'");
 												$fetch_cat_name = mysqli_fetch_array($get_cat_name);
-												echo $fetch_cat_name['category_name'];
+												echo $fetch_cat_name['cat_type']?>&nbsp;<?php echo $fetch_cat_name['category_name'];
 												?></td>   													
 												<td><a href="view_sub_category.php?subcat_id=<?php echo $fetch_sub_cat_details['subcat_id'];?>" class="btn green btn-outline sbold uppercase" >View</a>
 												<a href="edit_sub_category.php?subcat_id=<?php echo $fetch_sub_cat_details['subcat_id'];?>" class="btn green btn-outline sbold uppercase" >Edit</a>

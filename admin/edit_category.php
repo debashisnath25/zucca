@@ -130,29 +130,29 @@ if(isset($_POST['submit_category']))
 										<div class="col-md-6">
 
 										<div class="form-group">
-                                                <label class="control-label col-md-3">Category Type
+                                                <label class="control-label col-md-4">Category Type
                                                     <span class="required"> * </span>
                                                 </label>
-                                                <div class="col-md-9">
+                                                <div class="col-md-8">
 													<div class="input-group">
 														<span class="input-group-addon">
 															<i class="fa fa-bookmark"></i>
 														</span>
 														<select name="cat_type" class="form-control">
 														<option value="<?php echo $fetch_cat_info['cat_type'];?>" selected disabled></option>
-														<option value="men" <?php echo (($fetch_cat_info['cat_type']=='men')?'selected':'')?>>MEN</option>
-														<option value="women"<?php echo (($fetch_cat_info['cat_type']=='women')?'selected':'')?>>WOMEN</option>
-														<option value="kids"<?php echo (($fetch_cat_info['cat_type']=='kids')?'selected':'')?>>KIDS</option>
+														<option value="Man" <?php echo (($fetch_cat_info['cat_type']=='Man')?'selected':'')?>>MAN</option>
+														<option value="Woman"<?php echo (($fetch_cat_info['cat_type']=='Woman')?'selected':'')?>>WOMAN</option>
+														<option value="Kids"<?php echo (($fetch_cat_info['cat_type']=='Kids')?'selected':'')?>>KIDS</option>
 														</select>
 													</div>
 												</div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="control-label col-md-3">Category Name
+                                                <label class="control-label col-md-4">Category Name
                                                     <span class="required"> * </span>
                                                 </label>
-                                                <div class="col-md-9">
+                                                <div class="col-md-8">
 													<div class="input-group">
 														<span class="input-group-addon">
 															<i class="fa fa-bookmark"></i>
@@ -163,10 +163,10 @@ if(isset($_POST['submit_category']))
                                             </div>	
 											
 											<div class="form-group">
-												<label class="control-label col-md-3">Image
+												<label class="control-label col-md-4">Image
 													<span class="required"> * </span>
 												</label>
-												<div class="col-md-9 ">													
+												<div class="col-md-8 ">													
 													<div class="col-md-12">
 													<div class="fileinput fileinput-new" data-provides="fileinput">
 														<div class="fileinput-new thumbnail" >
