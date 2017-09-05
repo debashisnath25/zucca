@@ -6,11 +6,13 @@
 		$email = $_POST['email'];
 		$password = $_POST['password'];
 		
-		$save_reg = mysqli_query($mysqli,"insert into user_log values('','".$email."','".$password."')");
-		if($save_reg)
+		$check_reg = mysqli_query($mysqli,"select from user where email='$email' and password='$password'");
+		$fetch_user_data = mysqli_fetch_array($check_reg);
+		$check_row = mysqli_num_rows($check_reg);
+		if($check_row = 1)
 		{
-			$_SESSION['id'] = mysqli_insert_id($mysqli);
-			echo "<script>alert('yes')</script>";
+			$_SESSION['id'] = $fetch_user_data['user_id'];
+			echo "<script>window.location.href='index.php'</script>";
 		}
 		else
 		{
@@ -25,10 +27,11 @@
 		$phone = $_POST['phone'];
 		$email = $_POST['email'];
 		$password = $_POST['password'];
-		$save_reg = mysqli_query($mysqli,"insert into user_log values('','".$fname."','".$lname."','".$phone."','".$email."','".$password."')");
+		$save_reg = mysqli_query($mysqli,"insert into user values('','".$fname."','".$lname."','','".$email."','','".$phone."','','','','','','','','','".$password."','active','','','customer')");
 		if($save_reg)
 		{
-			echo "<script>alert('yoo')</script>";
+        	$_SESSION['id'] = mysqli_insert_id($mysqli);
+			echo "<script>window.location.href='index.php'</script>";
 		}
 		else
 		{
@@ -119,23 +122,23 @@
 									
 									<div class="form-field-wrapper">
                                         <label>Enter Your First Name <span class="required">*</span></label>
-                                        <input id="fname" class="input-md form-full-width" name="fname" placeholder="Enter Your First Name" value="" size="30" aria-required="true" required="" type="text">
+                                        <input class="input-md form-full-width" name="fname" placeholder="Enter Your First Name" value="" size="30" aria-required="true" required="" type="text">
                                     </div>
 									<div class="form-field-wrapper">
                                         <label>Enter Your Last Name <span class="required">*</span></label>
-                                        <input id="lname" class="input-md form-full-width" name="lname" placeholder="Enter Your Last Name" value="" size="30" aria-required="true" required="" type="text">
+                                        <input  class="input-md form-full-width" name="lname" placeholder="Enter Your Last Name" value="" size="30" aria-required="true" required="" type="text">
                                     </div>
 									<div class="form-field-wrapper">
                                         <label>Enter Your Phone Number <span class="required">*</span></label>
-                                        <input id="phone" class="input-md form-full-width" name="phone" placeholder="Enter Your Phone Number" value="" size="30" aria-required="true" required="" type="number_format">
+                                        <input  class="input-md form-full-width" name="phone" placeholder="Enter Your Phone Number" value="" size="30" aria-required="true" required="" type="number_format">
                                     </div>
                                     <div class="form-field-wrapper">
                                         <label>Enter Your Email <span class="required">*</span></label>
-                                        <input id="email" class="input-md form-full-width" name="email" placeholder="Enter Your Email Address" value="" size="30" aria-required="true" required="" type="email">
+                                        <input class="input-md form-full-width" name="email" placeholder="Enter Your Email Address" value="" size="30" aria-required="true" required="" type="email">
                                     </div>
                                     <div class="form-field-wrapper">
                                         <label>Enter Your Password <span class="required">*</span></label>
-                                        <input id="password" class="input-md form-full-width" name="password" placeholder="Enter Your Password" value="" size="30" aria-required="true" required="" type="password">
+                                        <input class="input-md form-full-width" name="password" placeholder="Enter Your Password" value="" size="30" aria-required="true" required="" type="password">
                                     </div>
 									
                                     <div class="form-field-wrapper">
