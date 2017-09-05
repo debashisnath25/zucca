@@ -1,7 +1,6 @@
 <?php
 	include ("config.php");
 	$id = $_SESSION['id'];
-	$product_id = $_GET['product_id'];
 	
 ?>
 
@@ -240,210 +239,48 @@
 
                     <!-- Navigation Menu -->
                     <nav class="navigation-menu">
-				<?php
-				$select_query = mysqli_query($mysqli,"select * from product by product_id desc");
-				while($fetch_query = mysqli_fetch_array($select_query))
-				$select_query = mysqli_query($mysqli,"select * from image_name by productimage_id desc");
-				while($fetch_query = mysqli_fetch_array($select_query))
-				{
-				?>
+				
                         <ul>
                             <li>
                                 <a href="index.php">Home</a>
                             </li>
+							<?php
+							$select_cat_query = mysqli_query($mysqli,"select * from category");
+							while($fetch_cat_query = mysqli_fetch_array($select_cat_query))				
+							{
+							?>
                             <li>
-                                <a href="shop_list.php">Man</a>
+                                <a href="shop_list.php"><?php echo $fetch_cat_query['cat_type'];?></a>
                                 <!-- Drodown Menu ------->
                                 <ul class="nav-dropdown js-nav-dropdown">
                                     <li class="container">
                                         <ul class="row">
                                             <!--Grid 1-->
                                             <li class="nav-dropdown-grid">
-                                                <h6><?php echo $fetch_query['product_name'];?></h6>
+                                                <h6><?php echo $fetch_cat_query['category_name'];?></h6>
                                                 <ul>
-                                                    <li><a href="#"><?php echo $fetch_query['product_title'];?></a></li>
-                                                    <li><a href="#"><?php echo $fetch_query['product_title'];?><span class="new-label">New</span></a></li>
-                                                    <li><a href="#"><?php echo $fetch_query['product_title'];?></a></li>
-                                                    <li><a href="#"><?php echo $fetch_query['product_title'];?></a></li>
-                                                    <li><a href="#"><?php echo $fetch_query['product_title'];?></a></li>
+                                                    <li>
+													<?php
+													$cat_id = $fetch_cat_query['cat_id'];
+													$get_sub_cat = mysqli_query($mysqli,"select * from sub_category where cat_id = '$cat_id'");
+													$fetch_sub_cat = mysqli_fetch_array($get_sub_cat);
+													$sub_cat_id = $fetch_sub_cat['subcat_id'];
+													?><a href="shop_list.php?sub_id=<?php echo $sub_cat_id;?>">
+													<?php
+													echo $fetch_sub_cat['subcat_name'];
+													?>
+													</a></li>
                                                 </ul>
                                             </li>
                                             <!--Grid 2-->
-                                            <li class="nav-dropdown-grid">
-                                                <h6>Clothing</h6>
-                                                <ul>
-                                                    <li><a href="#">Polos & Tees</a></li>
-                                                    <li><a href="#">Casual Shirts</a></li>
-                                                    <li><a href="#">Jeans</a></li>
-                                                    <li><a href="#">Casual Trousers</a></li>
-                                                    <li><a href="#">Formal Shirts<span class="sale-label">Sale</span></a></li>
-                                                    <li><a href="#">Formal Trousers</a></li>
-                                                    <li><a href="#">Suits & Blazers</a></li>
-                                                    <li><a href="#">Winter Jackets</a></li>
-                                                    <li><a href="#">Track wear</a></li>
-                                                </ul>
-                                            </li>
-                                            <!--Grid 3-->
-                                            <li class="nav-dropdown-grid">
-                                                <h6>ACCESSORIES</h6>
-                                                <ul>
-                                                    <li><a href="#">Mens Jewellery</a></li>
-                                                    <li><a href="#">Bag</a></li>
-                                                    <li><a href="#">Sunglasses</a></li>
-                                                    <li><a href="#">Watches</a></li>
-                                                    <li><a href="#">Hair Care</a></li>
-                                                    <li><a href="#">Ties & Cufflinks</a></li>
-                                                    <li><a href="#">Perfume</a></li>
-                                                    <li><a href="#">Belt</a></li>
-                                                </ul>
-                                            </li>
-                                            <!--Grid 4-->
-                                            <li class="nav-dropdown-grid">
-                                                <h6>Brand</h6>
-                                                <ul>
-                                                    <li><a href="#">Analog</a></li>
-                                                    <li><a href="#">Chronograph</a></li>
-                                                    <li><a href="#">Digital</a></li>
-                                                    <li><a href="#">Watch Cases</a></li>
-                                                    <li><a href="#">Samsung</a></li>
-                                                    <li><a href="#">Apple</a></li>
-                                                    <li><a href="#">Hitachi</a></li>
-                                                </ul>
-                                            </li>
-
                                         </ul>
                                     </li>
                                 </ul>
                                 <!-- End Drodown Menu -->
                             </li>
-                            <li>
-                                <a href="shop_list.php">Women</a>
-                                <!-- Drodown Menu ------->
-                                <ul class="nav-dropdown js-nav-dropdown">
-                                    <li class="container">
-                                        <ul class="row">
-                                            <!--Grid 1-->
-                                            <li class="nav-dropdown-grid">
-                                                <h6>New In</h6>
-                                                <ul>
-                                                    <li><a href="#">New In Clothing</a></li>
-                                                    <li><a href="#">New In Shoes</a></li>
-                                                    <li><a href="#">New In Bags</a></li>
-                                                    <li><a href="#">New In Watches</a></li>
-                                                    <li><a href="#">Sweaters</a></li>
-                                                    <li><a href="#">Winter Shrugs</a></li>
-                                                </ul>
-                                            </li>
-                                            <!--Grid 2-->
-                                            <li class="nav-dropdown-grid">
-                                                <h6>Clothing</h6>
-                                                <ul>
-                                                    <li><a href="#">Tops , tees & shirts</a></li>
-                                                    <li><a href="#">Dresses & Jumpsuits</a></li>
-                                                    <li><a href="#">Trousers & Jeans</a></li>
-                                                    <li><a href="#">Leggings & Jeggings</a></li>
-                                                    <li><a href="#">Capris,Shorts & Skirts</a></li>
-                                                    <li><a href="#">Winter Jackets</a></li>
-                                                    <li><a href="#">Clothing Accessories</a></li>
-                                                    <li><a href="#">Sweaters</a></li>
-                                                    <li><a href="#">Winter Shrugs</a></li>
-                                                </ul>
-                                            </li>
-                                            <!--Grid 3-->
-                                            <li class="nav-dropdown-grid">
-                                                <h6>Brand</h6>
-                                                <ul>
-                                                    <li><a href="#">A&C Signature</a></li>
-                                                    <li><a href="#">Angry Birds</a></li>
-                                                    <li><a href="#">Macadamia</a></li>
-                                                    <li><a href="#">Miller & Schweizer</a></li>
-                                                    <li><a href="#">Stylet</a></li>
-                                                    <li><a href="#">Van Heusen</a></li>
-                                                    <li><a href="#">Wrangler</a></li>
-                                                    <li><a href="#">Wills Lifestyle</a></li>
-                                                    <li><a href="#">X'Pose</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="nav-dropdown-grid">
-                                                <a href="#" class="sub-banner">
-                                                    <img src="images/banner_115145.jpg" alt="" /></a>
-                                            </li>
-
-                                        </ul>
-                                    </li>
-                                </ul>
-                                <!-- End Drodown Menu -->
-                            </li>
-                            <li>
-                                <a href="shop_list.php">Kids</a>
-                                <!-- Drodown Menu ------->
-                                <ul class="nav-dropdown js-nav-dropdown">
-                                    <li class="container">
-                                        <ul class="row">
-                                            <!--Grid 1-->
-                                            <li class="nav-dropdown-grid">
-                                                <h6>Kid's</h6>
-                                                <ul>
-                                                    <li><a href="#">Tops & Tunics</a></li>
-                                                    <li><a href="#">Shorts & Capris</a></li>
-                                                    <li><a href="#">Twin Sets</a></li>
-                                                    <li><a href="#">Jeans & Trousers</a></li>
-                                                    <li><a href="#">Leggings & Jeggings</a></li>
-                                                    <li><a href="#">Skirts</a></li>
-                                                    <li><a href="#">Jumpsuits</a></li>
-                                                    <li><a href="#">Casual Dresses</a></li>
-                                                    <li><a href="#">Ethnic Wear</a></li>
-                                                </ul>
-                                            </li>
-
-                                        </ul>
-                                    </li>
-                                </ul>
-                                <!-- End Drodown Menu -->
-                            </li>
-                            <li>
-                                <a href="shop_list.php">Brand</a>
-                                <!-- Drodown Menu ------->
-                                <ul class="nav-dropdown js-nav-dropdown">
-                                    <li class="container">
-                                        <ul class="row">
-                                            <!--Grid 1-->
-                                            <li class="nav-dropdown-grid">
-                                                <ul>
-                                                    <li><a href="#">A&C Signature</a></li>
-                                                    <li><a href="#">Angry Birds</a></li>
-                                                    <li><a href="#">Macadamia</a></li>
-                                                    <li><a href="#">Miller & Schweizer</a></li>
-                                                    <li><a href="#">Stylet</a></li>
-                                                    <li><a href="#">Van Heusen</a></li>
-                                                    <li><a href="#">Wrangler</a></li>
-                                                    <li><a href="#">Wills Lifestyle</a></li>
-                                                    <li><a href="#">X'Pose</a></li>
-                                                </ul>
-                                            </li>
-                                            <!--Grid 2-->
-                                            <li class="nav-dropdown-grid">
-                                                <ul>
-                                                    <li><a href="#">Apple</a></li>
-                                                    <li><a href="#">United State</a></li>
-                                                    <li><a href="#">Google</a></li>
-                                                    <li><a href="#">Coca-Cola</a></li>
-                                                    <li><a href="#">Microsoft</a></li>
-                                                    <li><a href="#">Samsung</a></li>
-                                                    <li><a href="#">Apple</a></li>
-                                                    <li><a href="#">Facebook</a></li>
-                                                    <li><a href="#">Twitter</a></li>
-                                                    <li><a href="#">Instagram</a></li>
-
-                                                </ul>
-                                            </li>
-
-                                        </ul>
-                                    </li>
-                                </ul>
-                                <!-- End Drodown Menu -->
-                            </li>
-                            
+							<?php
+							}
+							?>
 							<li>
                                 <a href="login-register.php"><i class="fa fa-lock left" aria-hidden="true"></i><span class="hidden-sm-down">Login</span></a>
                             </li>
@@ -475,9 +312,7 @@
                             </li>
                         </ul>
 						
-				<?php
-				}
-				?>
+				
                     </nav>
                     <!-- End Navigation Menu -->
 

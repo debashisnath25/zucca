@@ -1,7 +1,10 @@
 <?php
 	include ("config.php");
 	$id = $_SESSION['id'];
-	$product_id = $_GET['product_id'];
+	$product_id = $_GET['pro_id'];
+	
+	$select_product = mysqli_query($mysqli,"select * from product where product_id='$product_id'");
+	$fetch_product = mysqli_fetch_array($select_product);
 	
 ?>
 
@@ -33,15 +36,10 @@
 
                 <!-- Product -->
                 <div id="product-detail" class="container">
-				<?php
-				$select_query = mysqli_query($mysqli,"select * from product by product_id desc");
-				while($fetch_query = mysqli_fetch_array($select_query))
-				$select_query = mysqli_query($mysqli,"select * from image_name by productimage_id desc");
-				while($fetch_query = mysqli_fetch_array($select_query))
-				{
-				?>
+				
                     <div class="row">
                         <div class="col-lg-9 col-md-12 product-content sidebar-position-right">
+								
                             <div class="row">
                                 <!-- Product Image -->
                                 <div class="col-lg-6 col-md-12 col-sm-12 mb-30">
@@ -49,36 +47,16 @@
                                         <!-- Slick Image Slider -->
                                         <div class="product-image-slider product-image-gallery" id="product-image-gallery" data-pswp-uid="3">
                                             <div class="item">
-                                                <a class="product-gallery-item" href="admin/uploads/<?php echo $fetch_query['image_name'];?>" data-size="" data-med="admin/uploads/<?php echo $fetch_query['image_name'];?>" data-med-size="">
-                                                    <img src="admin/uploads/<?php echo $fetch_query['image_name'];?>" alt="image 1" />
+													<?php
+													$fetch_pro_id = $fetch_product['product_id'];
+													$get_product_image = mysqli_query($mysqli,"select * from product_image where product_id='$fetch_pro_id'");
+													$fetch_image = mysqli_fetch_array($get_product_image);
+													?>
+                                                <a class="product-gallery-item" href="" data-size="" data-med="" data-med-size="">
+                                                    <img src="admin/uploads/<?php echo $fetch_image['image_name'];?>" alt="image 1" />
                                                 </a>
-                                            </div>
-                                            <div class="item">
-                                                <a class="product-gallery-item" href="admin/uploads/<?php echo $fetch_query['image_name'];?>" data-size="" data-med="admin/uploads/<?php echo $fetch_query['image_name'];?>" data-med-size="">
-                                                    <img src="admin/uploads/<?php echo $fetch_query['image_name'];?>" alt="image 2" />
-                                                </a>
-                                            </div>
-                                            <div class="item">
-                                                <a class="product-gallery-item" href="images/product_12547007_3.jpg" data-size="" data-med="admin/uploads/<?php echo $fetch_query['image_name'];?>" data-med-size="">
-                                                    <img src="admin/uploads/<?php echo $fetch_query['image_name'];?>" alt="image 3" />
-                                                </a>
-                                            </div>
-                                            <div class="item">
-                                                <a class="product-gallery-item" href="admin/uploads/<?php echo $fetch_query['image_name'];?>" data-size="" data-med="admin/uploads/<?php echo $fetch_query['image_name'];?>" data-med-size="">
-                                                    <img src="admin/uploads/<?php echo $fetch_query['image_name'];?>" alt="image 4" />
-                                                </a>
-                                            </div>
-                                            <div class="item">
-                                                <a class="product-gallery-item" href="admin/uploads/<?php echo $fetch_query['image_name'];?>" data-size="" data-med="admin/uploads/<?php echo $fetch_query['image_name'];?>" data-med-size="">
-                                                    <img src="admin/uploads/<?php echo $fetch_query['image_name'];?>" alt="image 5" />
-                                                </a>
-                                            </div>
-                                            <div class="item">
-                                                <a class="product-gallery-item" href="admin/uploads/<?php echo $fetch_query['image_name'];?>" data-size="" data-med="admin/uploads/<?php echo $fetch_query['image_name'];?>" data-med-size="">
-                                                    <img src="admin/uploads/<?php echo $fetch_query['image_name'];?>" alt="image 1" />
-                                                </a>
-                                            </div>
-                                        </div>
+                                            </div>											
+                                           </div>
                                         <!-- End Slick Image Slider -->
 
                                         <a href="javascript:void(0)" id="zoom-images-button" class="zoom-images-button"><i class="fa fa-expand" aria-hidden="true"></i></a>
@@ -89,23 +67,8 @@
                                     <!-- Slick Thumb Slider -->
                                     <div class="product-image-slider-thumbnails">
                                         <div class="item">
-                                            <img src="admin/uploads/<?php echo $fetch_query['image_name'];?>" alt="image 1" />
-                                        </div>
-                                        <div class="item">
-                                            <img src="admin/uploads/<?php echo $fetch_query['image_name'];?>" alt="image 1" />
-                                        </div>
-                                        <div class="item">
-                                            <img src="admin/uploads/<?php echo $fetch_query['image_name'];?>" alt="image 1" />
-                                        </div>
-                                        <div class="item">
-                                            <img src="admin/uploads/<?php echo $fetch_query['image_name'];?>" alt="image 1" />
-                                        </div>
-                                        <div class="item">
-                                            <img src="admin/uploads/<?php echo $fetch_query['image_name'];?>" alt="image 1" />
-                                        </div>
-                                        <div class="item">
-                                            <img src="admin/uploads/<?php echo $fetch_query['image_name'];?>" alt="image 1" />
-                                        </div>
+                                            <img src="admin/uploads/<?php echo $fetch_image['image_name'];?>" alt="image 1" />
+                                        </div>                                     
                                     </div>
                                     <!-- End Slick Thumb Slider -->
                                 </div>
@@ -114,7 +77,7 @@
                                 <!-- Product Content -->
                                 <div class="col-lg-6 col-md-12 col-sm-12 mb-30">
                                     <div class="product-page-content">
-                                        <h2 class="product-title"><?php echo $fetch_query['product_title'];?></h2>
+                                        <h2 class="product-title"><?php echo $fetch_product['product_title'];?></h2>
                                         <div class="product-rating">
                                             <div class="star-rating" itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating" title="Rated 4 out of 5">
                                                 <span style="width: 60%"></span>
@@ -122,10 +85,10 @@
                                             <div class="product-rating-count">( <span class="count">3</span> Reviews )</div>
                                         </div>
                                         <div class="product-price">
-                                            <del><?php echo $fetch_query['selling_price'];?></del><span><span class="product-price-sign">$</span><span class="product-price-text"><?php echo $fetch_query['selling_price'];?></span></span>
+                                            <del><?php echo $fetch_product['selling_price'];?></del><span><span class="fa fa-inr"></span><span class="product-price-text"><?php echo $fetch_product['selling_price'];?></span></span>
                                         </div>
                                         <p class="product-description">
-                                           <?php echo $fetch_query['product_desc'];?>
+                                           <?php echo $fetch_product['product_desc'];?>
                                         </p>
                                         <div class="row product-filters">
                                             <form class="col-md-12 filters-color">
@@ -179,7 +142,7 @@
                                         </form>
                                         
                                         <div class="product-meta">
-                                            <span>SKU : <span class="sku" itemprop="sku">005687</span></span>
+                                            <span>SKU : <span class="sku" itemprop="sku"><?php echo rand();?></span></span>
                                             <span>Category : <span class="category" itemprop="category">Shoes</span></span>
                                         </div>
                                         <div class="product-share">
@@ -195,6 +158,7 @@
                                     </div>
                                 </div>
                             </div>
+						
                         </div>
                         <div class="col-lg-3 col-md-12 product-sidebar">
                             <div class="sidebar-widget-outline product-brand">
@@ -264,9 +228,7 @@
                             </div>
                         </div>
                     </div>
-				<?php
-				}
-				?>
+			
                 </div>
                 <!-- End Product -->
 
@@ -296,27 +258,9 @@
                                 <div class="row">
                                     <div class=" col-md-6">
                                         <p>
-                                            Etiam molestie sit amet arcu vel dictum. Integer mattis est nec porta porttitor. Maecenas condimentum sapien eget urna condimentum, non sagittis ante dapibus. Donec congue libero ut ex malesuada auctor. Vivamus at urna et erat aliquam pharetra. Nulla facilisi. Morbi feugiat tortor finibus elit aliquet tempor.
-Generated 5 paragraphs, 453 words, 3065 bytes of Lorem Ipsum
-                                        </p>
-                                        <h4>Vivamus at urna</h4>
-                                        <ul>
-                                            <li>Etiam molestie sit amet arcu vel dictum</li>
-                                            <li>Integer mattis est nec porta porttitor</li>
-                                            <li>Maecenas condimentum sapien eget urna condimentum</li>
-                                            <li>Donec congue libero ut ex malesuada auctor</li>
-                                            <li>Generated 5 paragraphs, 453 words</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p>
-                                            Etiam molestie sit amet arcu vel dictum. Integer mattis est nec porta porttitor. Maecenas condimentum sapien eget urna condimentum, non sagittis ante dapibus. Donec congue libero ut ex malesuada auctor. Vivamus at urna et erat aliquam pharetra. Nulla facilisi. Morbi feugiat tortor finibus elit aliquet tempor.
-Generated 5 paragraphs, 453 words, 3065 bytes of Lorem Ipsum
-                                        </p>
-                                        <h4>hadding four</h4>
-                                        <h5>hadding five</h5>
-                                        <h6>hadding six</h6>
-                                    </div>
+                                            <?php echo $fetch_product['product_short_desc'];?>
+                                        </p>                                       
+                                    </div>                                   
                                 </div>
                             </div>
                             <!-- End Accordian Content -->
@@ -492,10 +436,23 @@ Generated 5 paragraphs, 453 words, 3065 bytes of Lorem Ipsum
                     <h2 class="page-title">Related Products</h2>
                     <div id="new-tranding" class="product-item-4 owl-carousel owl-theme nf-carousel-theme1">
                         <!-- item.1 -->
+						<?php 
+						$get_product_id = mysqli_query($mysqli,"select * from product where product_id='$product_id'");
+						$fetch_product_id = mysqli_fetch_array($get_product_id);
+						$subcat_other_id = $fetch_product_id['subcat_id'];
+						$get_subcat_data = mysqli_query($mysqli,"select * from product where subcat_id='$subcat_other_id' and product_id !='$product_id'");
+						while($fetch_other_data = mysqli_fetch_array($get_subcat_data))
+						{
+						?>
                         <div class="product-item">
                             <div class="product-item-inner">
                                 <div class="product-img-wrap">
-                                    <img src="images/product_125470001.jpg" alt="">
+									<?php
+									$fetch_proimg_id = $fetch_other_data['product_id'];
+									$get_prod_image = mysqli_query($mysqli,"select * from product_image where product_id='$fetch_proimg_id'");
+									$fetch_proimage = mysqli_fetch_array($get_prod_image);
+									?>
+                                    <img src="admin/uploads/<?php echo $fetch_proimage['image_name'];?>" alt="">
                                 </div>
                                 <div class="product-button">
                                     <a href="#" class="js_tooltip" data-mode="top" data-tip="Add To Cart"><i class="fa fa-shopping-bag"></i></a>
@@ -504,8 +461,8 @@ Generated 5 paragraphs, 453 words, 3065 bytes of Lorem Ipsum
                                 </div>
                             </div>
                             <div class="product-detail">
-                                <a class="tag" href="#">Men Fashion</a>
-                                <p class="product-title"><a href="product_detail.html">United Colors of Benetton</a></p>
+                                <a class="tag" href="#"></a>
+                                <p class="product-title"><a href="product_detail.html"><?php echo $fetch_other_data['product_title'];?></a></p>
                                 <div class="product-rating">
                                     <div class="star-rating" itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating" title="Rated 4 out of 5">
                                         <span style="width: 60%"></span>
@@ -513,173 +470,17 @@ Generated 5 paragraphs, 453 words, 3065 bytes of Lorem Ipsum
                                     <a href="#" class="product-rating-count"><span class="count">3</span> Reviews</a>
                                 </div>
                                 <p class="product-description">
-                                    When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic remaining essentially unchanged.
+                                   <?php echo $fetch_other_data['product_short_desc'];?>
                                 </p>
-                                <h5 class="item-price">$39.00</h5>
+                                <h5 class="item-price"><?php echo $fetch_other_data['selling_price'];?></h5>
                             </div>
                         </div>
+						<?php
+						}
+						?>
                         <!-- item.2 -->
-                        <div class="product-item">
-                            <div class="product-item-inner">
-                                <div class="product-img-wrap">
-                                    <img src="images/product_125470002.jpg" alt="">
-                                </div>
-                                <div class="product-button">
-                                    <a href="#" class="js_tooltip" data-mode="top" data-tip="Add To Cart"><i class="fa fa-shopping-bag"></i></a>
-                                    
-                                    <a href="#" class="js_tooltip" data-mode="top" data-tip="Quick&nbsp;View"><i class="fa fa-eye"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-detail">
-                                <a class="tag" href="#">Men Fashion</a>
-                                <p class="product-title"><a href="product_detail.html">United Colors of Benetton</a></p>
-                                <div class="product-rating">
-                                    <div class="star-rating" itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating" title="Rated 4 out of 5">
-                                        <span style="width: 60%"></span>
-                                    </div>
-                                    <a href="#" class="product-rating-count"><span class="count">3</span> Reviews</a>
-                                </div>
-                                <p class="product-description">
-                                    When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic remaining essentially unchanged.
-                                </p>
-                                <h5 class="item-price">$39.00</h5>
-                            </div>
-                        </div>
-                        <!-- item.3 -->
-                        <div class="product-item">
-                            <div class="product-item-inner">
-                                <div class="product-img-wrap">
-                                    <img src="images/product_125470003.jpg" alt="">
-                                </div>
-                                <div class="product-button">
-                                    <a href="#" class="js_tooltip" data-mode="top" data-tip="Add To Cart"><i class="fa fa-shopping-bag"></i></a>
-                                    
-                                    <a href="#" class="js_tooltip" data-mode="top" data-tip="Quick&nbsp;View"><i class="fa fa-eye"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-detail">
-                                <a class="tag" href="#">Men Fashion</a>
-                                <p class="product-title"><a href="product_detail.html">United Colors of Benetton</a></p>
-                                <div class="product-rating">
-                                    <div class="star-rating" itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating" title="Rated 4 out of 5">
-                                        <span style="width: 60%"></span>
-                                    </div>
-                                    <a href="#" class="product-rating-count"><span class="count">3</span> Reviews</a>
-                                </div>
-                                <p class="product-description">
-                                    When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic remaining essentially unchanged.
-                                </p>
-                                <h5 class="item-price">$39.00</h5>
-                            </div>
-                        </div>
-                        <!-- item.4 -->
-                        <div class="product-item">
-                            <div class="product-item-inner">
-                                <div class="product-img-wrap">
-                                    <img src="images/product_125470004.jpg" alt="">
-                                </div>
-                                <div class="product-button">
-                                    <a href="#" class="js_tooltip" data-mode="top" data-tip="Add To Cart"><i class="fa fa-shopping-bag"></i></a>
-                                    
-                                    <a href="#" class="js_tooltip" data-mode="top" data-tip="Quick&nbsp;View"><i class="fa fa-eye"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-detail">
-                                <a class="tag" href="#">Men Fashion</a>
-                                <p class="product-title"><a href="product_detail.html">United Colors of Benetton</a></p>
-                                <div class="product-rating">
-                                    <div class="star-rating" itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating" title="Rated 4 out of 5">
-                                        <span style="width: 60%"></span>
-                                    </div>
-                                    <a href="#" class="product-rating-count"><span class="count">3</span> Reviews</a>
-                                </div>
-                                <p class="product-description">
-                                    When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic remaining essentially unchanged.
-                                </p>
-                                <h5 class="item-price">$39.00</h5>
-                            </div>
-                        </div>
-                        <!-- item.5 -->
-                        <div class="product-item">
-                            <div class="product-item-inner">
-                                <div class="product-img-wrap">
-                                    <img src="images/product_125470005.jpg" alt="">
-                                </div>
-                                <div class="product-button">
-                                    <a href="#" class="js_tooltip" data-mode="top" data-tip="Add To Cart"><i class="fa fa-shopping-bag"></i></a>
-                                    
-                                    <a href="#" class="js_tooltip" data-mode="top" data-tip="Quick&nbsp;View"><i class="fa fa-eye"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-detail">
-                                <a class="tag" href="#">Men Fashion</a>
-                                <p class="product-title"><a href="product_detail.html">United Colors of Benetton</a></p>
-                                <div class="product-rating">
-                                    <div class="star-rating" itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating" title="Rated 4 out of 5">
-                                        <span style="width: 60%"></span>
-                                    </div>
-                                    <a href="#" class="product-rating-count"><span class="count">3</span> Reviews</a>
-                                </div>
-                                <p class="product-description">
-                                    When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic remaining essentially unchanged.
-                                </p>
-                                <h5 class="item-price">$39.00</h5>
-                            </div>
-                        </div>
-                        <!-- item.6 -->
-                        <div class="product-item">
-                            <div class="product-item-inner">
-                                <div class="product-img-wrap">
-                                    <img src="images/product_125470006.jpg" alt="">
-                                </div>
-                                <div class="product-button">
-                                    <a href="#" class="js_tooltip" data-mode="top" data-tip="Add To Cart"><i class="fa fa-shopping-bag"></i></a>
-                                    
-                                    <a href="#" class="js_tooltip" data-mode="top" data-tip="Quick&nbsp;View"><i class="fa fa-eye"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-detail">
-                                <a class="tag" href="#">Men Fashion</a>
-                                <p class="product-title"><a href="product_detail.html">United Colors of Benetton</a></p>
-                                <div class="product-rating">
-                                    <div class="star-rating" itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating" title="Rated 4 out of 5">
-                                        <span style="width: 60%"></span>
-                                    </div>
-                                    <a href="#" class="product-rating-count"><span class="count">3</span> Reviews</a>
-                                </div>
-                                <p class="product-description">
-                                    When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic remaining essentially unchanged.
-                                </p>
-                                <h5 class="item-price">$39.00</h5>
-                            </div>
-                        </div>
-                        <!-- item.7 -->
-                        <div class="product-item">
-                            <div class="product-item-inner">
-                                <div class="product-img-wrap">
-                                    <img src="images/product_125470007.jpg" alt="">
-                                </div>
-                                <div class="product-button">
-                                    <a href="#" class="js_tooltip" data-mode="top" data-tip="Add To Cart"><i class="fa fa-shopping-bag"></i></a>
-                                    
-                                    <a href="#" class="js_tooltip" data-mode="top" data-tip="Quick&nbsp;View"><i class="fa fa-eye"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-detail">
-                                <a class="tag" href="#">Men Fashion</a>
-                                <p class="product-title"><a href="product_detail.html">United Colors of Benetton</a></p>
-                                <div class="product-rating">
-                                    <div class="star-rating" itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating" title="Rated 4 out of 5">
-                                        <span style="width: 60%"></span>
-                                    </div>
-                                    <a href="#" class="product-rating-count"><span class="count">3</span> Reviews</a>
-                                </div>
-                                <p class="product-description">
-                                    When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic remaining essentially unchanged.
-                                </p>
-                                <h5 class="item-price">$39.00</h5>
-                            </div>
-                        </div>
+                      
+                        <!-- item.7 -->                       
 
                     </div>
                 </div>

@@ -6,17 +6,17 @@
 		$email = $_POST['email'];
 		$password = $_POST['password'];
 		
-		$check_reg = mysqli_query($mysqli,"select from user where email='$email' and password='$password'");
+		$check_reg = mysqli_query($mysqli,"select * from user where email='$email' and password='$password' and user_type='customer' and status='active'");
 		$fetch_user_data = mysqli_fetch_array($check_reg);
-		$check_row = mysqli_num_rows($check_reg);
-		if($check_row = 1)
+		$check_rows = mysqli_num_rows($check_reg);
+		if($check_rows > 0)
 		{
 			$_SESSION['id'] = $fetch_user_data['user_id'];
 			echo "<script>window.location.href='index.php'</script>";
 		}
 		else
 		{
-			echo "<script>alert('no')</script>";
+			$data = "error";
 		}
 	}
 	
@@ -35,7 +35,7 @@
 		}
 		else
 		{
-			echo "<script>alert('noo')</script>";
+			$data = "error";
 		}
 	}
 	
@@ -84,14 +84,14 @@
                                     <p>People are always like to go shopping. A lot of our effort is just: 'How do we make the retail experience a great one?'.</p>
                                     <div class="form-field-wrapper">
                                         <label>Enter Your Email <span class="required">*</span></label>
-                                        <input id="email" class="input-md form-full-width" name="email" placeholder="Enter Your Email Address" value="" size="30" aria-required="true" required="" type="email">
+                                        <input class="input-md form-full-width" name="email" placeholder="Enter Your Email Address" value="" size="30" aria-required="true" required="" type="email">
                                     </div>
                                     <div class="form-field-wrapper">
                                         <label>Enter Your Password <span class="required">*</span></label>
-                                        <input id="password" class="input-md form-full-width" name="password" placeholder="Enter Your Password" value="" size="30" aria-required="true" required="" type="password">
+                                        <input class="input-md form-full-width" name="password" placeholder="Enter Your Password" value="" size="30" aria-required="true" required="" type="password">
                                     </div>
                                     <div class="form-field-wrapper">
-                                        <input name="submit_log" id="submit_log" class="submit btn btn-md btn-black" value="Sign In" type="submit">
+                                        <input name="submit_log" class="submit btn btn-md btn-black" value="Sign In" type="submit">
                                     </div>
                                 </form>
                             </div>
