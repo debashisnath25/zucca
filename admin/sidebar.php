@@ -192,7 +192,7 @@
 								<span class="selected"></span>
 							</a>
 						</li>	
-						<li class="nav-item start <?php if($page_name == 'listing_customer.php'){ ?>active open<?php } ?>">
+						<li class="nav-item start <?php if($page_name == 'upload_seller_docs.php'){ ?>active open<?php } ?>">
 							<a href="upload_seller_docs.php" class="nav-link nav-toggle">
 									<i class="fa fa-eye"></i>
 									<span class="title">Upload documents</span>
