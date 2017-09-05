@@ -100,10 +100,10 @@ $get_cat_id = $_GET['cat_id'];
 										<div class="col-md-6">
 			
 											<div class="form-group">
-                                                <label class="control-label col-md-3">Category Type
+                                                <label class="control-label col-md-4">Category Type
                                                     <span class="required"> * </span>
                                                 </label>
-                                                <div class="col-md-9">
+                                                <div class="col-md-8">
 													<div class="form-control">														
 														<label><?php echo $fetch_cat_info['cat_type'];?></label>
 													</div>
@@ -111,10 +111,10 @@ $get_cat_id = $_GET['cat_id'];
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="control-label col-md-3">Category Name
+                                                <label class="control-label col-md-4">Category Name
                                                     <span class="required"> * </span>
                                                 </label>
-                                                <div class="col-md-9">
+                                                <div class="col-md-8">
 													<div class="form-control">														
 														<label><?php echo $fetch_cat_info['category_name'];?></label>
 													</div>
@@ -122,10 +122,10 @@ $get_cat_id = $_GET['cat_id'];
                                             </div>	
 											
 											<div class="form-group">
-												<label class="control-label col-md-3">Image
+												<label class="control-label col-md-4">Image
 													<span class="required"> * </span>
 												</label>
-												<div class="col-md-9 ">													
+												<div class="col-md-8 ">													
 													<div class="col-md-12">													
 														<div class="fileinput-new thumbnail" >
 															<img src="uploads/<?php echo $fetch_cat_info['category_image'];?>" alt="" /> </div>	

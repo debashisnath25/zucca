@@ -97,7 +97,7 @@ if(isset($_GET['del_cat_id'])){
 												 <td><?php echo $fetch_cat_details['cat_type'];?></td> 
                                                 <td><?php echo $fetch_cat_details['category_name'];?></td>                                               
 												<td>
-													<img src="uploads/<?php echo $fetch_cat_details['category_image']; ?>" width="100" height="75"/>
+													<img src="uploads/<?php echo $fetch_cat_details['category_image']; ?>" width="80" height="100"/>
 												</td>											
 												<td><a href="view_category.php?cat_id=<?php echo $fetch_cat_details['cat_id'];?>" class="btn green btn-outline sbold uppercase" >View</a>
 												<a href="edit_category.php?cat_id=<?php echo $fetch_cat_details['cat_id'];?>" class="btn green btn-outline sbold uppercase" >Edit</a>

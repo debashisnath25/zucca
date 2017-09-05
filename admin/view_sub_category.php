@@ -101,18 +101,19 @@ $get_subcat_id = $_GET['subcat_id'];
 									<div class="col-md-7">
 									
 										<div class="form-group">
-                                                <label class="control-label col-md-3">Category Type
+                                                <label class="control-label col-md-4">Category Type
                                                     <span class="required"> * </span>
                                                 </label>
-                                                <div class="col-md-9">
+                                                <div class="col-md-8">
 													<div class="form-control col-md-12">															
 														<label>
 														<?php 
 															$cat_id = $fetch_subcat_info['cat_id'];
 															$get_cat_id = mysqli_query($mysqli,"select * from category where cat_id = '$cat_id'");
 															$fetch_cat_id = mysqli_fetch_array($get_cat_id);
-															echo $fetch_cat_id['category_name'];
+															echo $fetch_cat_id['cat_type'];?>&nbsp;<?php echo $fetch_cat_id['category_name'];
 															?>
+														
 														</label>														
 													</div>
                                                 </div>
@@ -120,10 +121,10 @@ $get_subcat_id = $_GET['subcat_id'];
 
 										
                                             <div class="form-group">
-                                                <label class="control-label col-md-3">Sub-Category Name
+                                                <label class="control-label col-md-4">Sub-Category Name
                                                     <span class="required"> * </span>
                                                 </label>
-                                                <div class="col-md-9">
+                                                <div class="col-md-8">
 													<div class="form-control">														
 														<label><?php echo $fetch_subcat_info['subcat_name'];?></label>
 													</div>

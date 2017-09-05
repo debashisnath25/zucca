@@ -50,14 +50,14 @@ if(isset($_GET['del_pro_id'])){
                                 <i class="fa fa-circle"></i>
                             </li>
                             <li>
-                                <span>View</span>
+                                <span>Listing</span>
                             </li>
                         </ul>
                     </div>
                     <!-- END PAGE BAR -->
                     <!-- BEGIN PAGE TITLE-->
                     <h3 class="page-title"> Product -
-                        <small>View</small>
+                        <small>Listing</small>
                     </h3>
                     <!-- END PAGE TITLE-->
                     <!-- END PAGE HEADER-->
@@ -69,7 +69,7 @@ if(isset($_GET['del_pro_id'])){
                                 <div class="portlet-title">
                                     <div class="caption font-dark">
                                         <i class="icon-home font-dark"></i>
-                                        <span class="caption-subject bold uppercase">View Product</span>
+                                        <span class="caption-subject bold uppercase">Listing Product</span>
                                     </div>
                                     <div class="tools"> </div>
                                 </div>
@@ -78,12 +78,12 @@ if(isset($_GET['del_pro_id'])){
                                         <thead>
                                             <tr>
 												<th class="all">Sl. No.</th>
-												<th class="all">Product Image</th>
+												<th class="none">Product Image</th>
                                                 <th class="all">Product Name</th>
-                                                <th class="min-phone-l">Short Description</th>
-												<th class="min-phone-l">Selling Price</th>
+                                                <th class="none">Short Description</th>
+												<th class="none">Selling Price</th>
 												<th class="min-phone-l">Category</th>
-												<th class="min-phone-l">Sub-Category</th>
+												<th class="none">Sub-Category</th>
 												<th class="min-phone-l">Brand</th>												
 												<th class="min-phone-l">Action</th>
                                             </tr>
@@ -104,7 +104,7 @@ if(isset($_GET['del_pro_id'])){
 												while($fetch_image = mysqli_fetch_array($get_image))
 												{
 												?>
-												<img src="uploads/<?php echo $fetch_image['image_name'];?>" style="height:65px;width:65px;">
+												<img src="uploads/<?php echo $fetch_image['image_name'];?>" style="height:90px;width:65px;">
 												<?php
 												}
 												?>

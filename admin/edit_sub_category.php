@@ -117,10 +117,10 @@ if(isset($_POST['submit_subcategory']))
 									<div class="col-md-7">
 									
 										<div class="form-group">
-                                                <label class="control-label col-md-3">Category Type
+                                                <label class="control-label col-md-4">Category Type
                                                     <span class="required"> * </span>
                                                 </label>
-                                                <div class="col-md-9">
+                                                <div class="col-md-8">
 													<div class="input-group col-md-12">
 														<span class="input-group-addon">
 															<i class="fa fa-briefcase"></i>
@@ -131,7 +131,7 @@ if(isset($_POST['submit_subcategory']))
 															$cat_id = $fetch_subcat_info['cat_id'];
 															$get_cat_id = mysqli_query($mysqli,"select * from category where cat_id = '$cat_id'");
 															$fetch_cat_id = mysqli_fetch_array($get_cat_id);
-															echo $fetch_cat_id['category_name'];
+															echo $fetch_cat_id['cat_type']-$fetch_cat_id['category_name'];
 															?></option>
 															<?php
 															$get_cat_name = mysqli_query($mysqli,"select * from category");
@@ -139,7 +139,7 @@ if(isset($_POST['submit_subcategory']))
 															{
 															?>
 															<option value="<?php echo $fetch_cat_name['cat_id'];?>" <?php
-															echo(($fetch_subcat_info['cat_id']==$fetch_cat_name['cat_id'])?'selected':'');?> ><?php echo $fetch_cat_name['category_name'];?>
+															echo(($fetch_subcat_info['cat_id']==$fetch_cat_name['cat_id'])?'selected':'');?> ><?php echo $fetch_cat_name['cat_type'];?>&nbsp;<?php echo $fetch_cat_name['category_name'];?>
 															</option>
 															<?php
 															}
@@ -151,10 +151,10 @@ if(isset($_POST['submit_subcategory']))
 
 										
                                             <div class="form-group">
-                                                <label class="control-label col-md-3">Sub-Category Name
+                                                <label class="control-label col-md-4">Sub-Category Name
                                                     <span class="required"> * </span>
                                                 </label>
-                                                <div class="col-md-9">
+                                                <div class="col-md-8">
 													<div class="input-group">
 														<span class="input-group-addon">
 															<i class="fa fa-bookmark"></i>

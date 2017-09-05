@@ -82,7 +82,7 @@ if(isset($_POST['submit_product']))
                     <div class="page-bar">
                         <ul class="page-breadcrumb">
                             <li>
-                                <a href="index.html">Home</a>
+                                <a href="listing_product.php">Home</a>
                                 <i class="fa fa-circle"></i>
                             </li>
                             <li>
@@ -132,7 +132,7 @@ if(isset($_POST['submit_product']))
                                         <div class="form-body">
                                             
 									<div class="col-md-12" style="padding-top:30px;" >
-										<div class="col-md-8">
+										<div class="col-md-7">
                                             <div class="form-group">
                                                 <label class="control-label col-md-4">Product Name
                                                     <span class="required"> * </span>
@@ -201,7 +201,7 @@ if(isset($_POST['submit_product']))
 															while($fetch_cat_name = mysqli_fetch_array($get_cat_name))
 															{
 															?>
-															<option value="<?php echo $fetch_cat_name['cat_id'];?>" ><?php echo $fetch_cat_name['category_name'];?>
+															<option value="<?php echo $fetch_cat_name['cat_id'];?>" ><?php echo $fetch_cat_name['cat_type'];?>&nbsp;<?php echo $fetch_cat_name['category_name'];?>
 															</option>
 															<?php
 															}
@@ -259,9 +259,10 @@ if(isset($_POST['submit_product']))
 														</select>
 													</div>
                                                 </div>
+											  </div>
 											</div>
 
-
+										<div class="col-md-5">
 											<div class="form-group last">
 												<label class="control-label col-md-4">Product Image 
 												<span class="required"> * </span>
@@ -294,7 +295,7 @@ if(isset($_POST['submit_product']))
 										
                                         <div class="form-actions">
                                             <div class="row">
-                                                <div class="col-md-offset-2 col-md-6">
+                                                <div class="col-md-offset-4 col-md-6">
                                                     <input type="submit" class="btn green" name="submit_product" value="Submit">
                                                 </div>
                                             </div>
