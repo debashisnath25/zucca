@@ -1,5 +1,5 @@
 <?php
-include('config.php');
+include("config.php");
 
 $get_brand_id = $_GET['brand_id'];
 

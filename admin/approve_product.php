@@ -1,14 +1,23 @@
 <?php
-include('config.php');
+include("config.php");
 
-if(isset($_GET['del_pro_id'])){
-	$delete_pro = $_GET['del_pro_id'];
-	$delete_pro_id = mysqli_query($mysqli,"delete from product where product_id = '$delete_pro'");
-		if($delete_pro_id){
-			echo "<script>window.location.href='listing_product.php'</script>";
-		}else{
-			$data = "error";
-		}
+if(isset($_GET['status'])){
+	$update_status = $_GET['status'];
+	if($update_status == 'active')
+	{
+		$status = 'inactive';
+	}
+	if($update_status == 'inactive')
+	{
+		$status = 'active';
+	}
+	$pro_id = $_GET['pro_id'];
+	$update_query = mysqli_query($mysqli,"update product set status='$status' where product_id='$pro_id'");
+	if($update_query){
+		$data = "success";
+	}else{
+		$data = "error";
+	}
 }
 ?>
 <!DOCTYPE html>
@@ -66,6 +75,21 @@ if(isset($_GET['del_pro_id'])){
 							<a href="add_product.php" class="btn green"><i class="fa fa-plus"></i> Add Product</a><br/><br/>
                             <!-- BEGIN EXAMPLE TABLE PORTLET-->
                             <div class="portlet light bordered">
+							
+							<div class="col-md-12 col-sm-12">
+									<?php
+									if(isset($data) && $data == "success"){
+									?>
+									<p style="text-align:center;background:#5cb85c;border:1px solid #CCC;border-radius:5px;padding:5px;color:#fff;font-weight:bold;margin-left:15px;"> Added Successfully </p>
+									<?php
+									}else if(isset($data) && $data == "error"){
+									?>
+									<p style="text-align:center;background:#e54e53;border:1px solid #CCC;border-radius:5px;padding:5px;color:#fff;font-weight:bold;margin-left:15px;"> Error in Insertion </p>
+									<?php
+									}
+									?>									
+								</div>
+
                                 <div class="portlet-title">
                                     <div class="caption font-dark">
                                         <i class="icon-home font-dark"></i>
@@ -78,37 +102,22 @@ if(isset($_GET['del_pro_id'])){
                                         <thead>
                                             <tr>
 												<th class="all">Sl. No.</th>
-												<th class="none">Product Image</th>
+												<th class="all">Product Image</th>
                                                 <th class="all">Product Name</th>
                                                 <th class="none">Short Description</th>
 												<th class="all">Selling Price</th>
-												<th class="none">Category</th>
+												<th class="all">Category</th>
 												<th class="all">Sub-Category</th>
-												<th class="none">Brand</th>												
+												<th class="all">Brand</th>												
 												<th class="all">Status</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody class="all_data">
 											<?php
 											$i=1;
 											$get_product = mysqli_query($mysqli,"select * from product");
 											while($fetch_pro_details = mysqli_fetch_array($get_product))
 											{
-												$pro_is = $fetch_pro_details['product_id'];
-												if(isset($_POST['sub_'.$pro_is.''])){
-													if(isset($_POST['status_'.$pro_is.''])){
-														$product_id = $_POST['status_'.$pro_is.''];
-													}else{
-														$product_id = "";
-													}
-													
-													$update_assoc = mysqli_query($mysqli,"UPDATE product SET associate_id='$associate_id' where user_id='$pro_is'");
-													if($update_assoc){
-														echo "<script>window.location.href='associate_to_sellers.php?data=success'</script>";
-													}else{
-														echo "<script>window.location.href='associate_to_sellers.php?data=error'</script>";
-													}
-												}
 											?>
                                             <tr>
 												<td><?php echo $i;?></td>
@@ -144,28 +153,14 @@ if(isset($_GET['del_pro_id'])){
 												$get_brand_name = mysqli_query($mysqli,"select * from brand where brand_id = '$brand_id'");
 												$fetch_brand_name = mysqli_fetch_array($get_brand_name);
 												echo $fetch_brand_name['brand_name'];
-												?></td>												
-												<td>
-												<div class="form-group">													 
-														<div class="col-md-8">
-															<div class="input-group col-md-8" style="float:left;">														<form name="status_<?php echo $fetch_pro_details['product_id'];?>" method="POST">
-															
-																<input name="status" class="form-control" type="radio" <?php echo (($fetch_pro_details['status'] == 'active')?'checked':'')?> style="float:left;">Active<br>
-																<input name="status" class="form-control" type="radio" <?php echo (($fetch_pro_details['status'] == 'inactive')?'selected disabled':'')?> style="float:left;">Inactive<br>
-																<input name="status" class="form-control" type="radio" <?php echo (($fetch_pro_details['status'] == 'pending')?'selected disabled':'')?> style="float:left;">Pending
-
-																	<!--<input value="inactive"<?php echo (($fetch_pro_details['status']=='inactive')?'selected disabled':'')?>>Inactive
-																	<input value="pending"<?php echo (($fetch_pro_details['status']=='pending')?'selected disabled':'')?>>Pending	-->																
-																</select>
-															</div>
-															</div>
-															<div class="input-group col-md-4" style="float:left;">
-																<input type="submit" class="btn btn-primary" value="submit" name="sub_<?php echo $fetch_pro_details['product_id'];?>" style="float:left;">
-															</div>
-															</form>
-														</div>
-													</div>
-												</td>												
+												?></td>	
+												<!--<input type= "radio" name="status" class="form-control" value="active">Active
+												<input type= "radio" name="status" class="form-control" value="inactive">Inactive-->
+												<td>													
+													 <a href="?status=<?php echo $fetch_pro_details['status'];?>&&pro_id=<?php echo $fetch_pro_details['product_id'];?>">
+														<button class="btn green btn-outline sbold uppercase" ><?php echo (($fetch_pro_details['status']=='active')?'inactive':'active');?></button>
+													</a>
+												</td>						
                                             </tr>
                                             <?php
 											$i++;

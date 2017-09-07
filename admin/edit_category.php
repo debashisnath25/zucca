@@ -1,5 +1,5 @@
 <?php
-include('config.php');
+include("config.php");
 
 $get_cat_id = $_GET['cat_id'];
 $get_cat_image = mysqli_query($mysqli,"select * from category where cat_id = '$get_cat_id'");

@@ -1,5 +1,5 @@
 <?php
-include('config.php');
+include("config.php");
 
 $get_subcat_id = $_GET['subcat_id'];
 

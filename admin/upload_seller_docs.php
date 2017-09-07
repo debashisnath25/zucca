@@ -1,5 +1,6 @@
 <?php
-include('config.php');
+include("config.php");
+
 $seller_id = $_SESSION['user_id'];
 if(isset($_POST['submit_docs']))
 {

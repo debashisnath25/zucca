@@ -1,5 +1,5 @@
 <?php
-include('config.php');
+include("config.php");
 
 $prod_id = $_GET['product_id'];
 $get_product_image = mysqli_query($mysqli,"select * from product_image where product_id='$prod_id'");

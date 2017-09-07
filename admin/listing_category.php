@@ -1,5 +1,5 @@
 <?php
-include('config.php');
+include("config.php");
 
 if(isset($_GET['del_cat_id'])){
 	$delete_cat = $_GET['del_cat_id'];

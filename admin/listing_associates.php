@@ -1,5 +1,5 @@
 <?php
-include('config.php');
+include("config.php");
 
 if(isset($_GET['del_pro_id'])){
 	$delete_pro = $_GET['del_pro_id'];

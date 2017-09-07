@@ -1,6 +1,6 @@
-
 <?php
-include('config.php');
+include("config.php");
+
 $get_cat_id = $_GET['cat_id'];
 ?>
 <!DOCTYPE html>
