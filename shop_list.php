@@ -2,7 +2,10 @@
 	include ("config.php");
 	$id = $_SESSION['id'];
 	$subcat_id = $_GET['sub_id'];
-	
+	$select_subcat_query = mysqli_query($mysqli,"select * from sub_category where subcat_id='$subcat_id'");
+	$fetch_subcat_query = mysqli_fetch_array($select_subcat_query);
+	$count_products = mysqli_query($mysqli,"select count(product_id) from product where subcat_id='$subcat_id'");
+	$fetch_count = mysqli_fetch_array($count_products);
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +23,7 @@
                             <nav class="breadcrumb-link">
                                 <a href="#">Home</a>
                                 <a href="#">Categories</a>
-                                <span>Men Polos & Tees</span>
+                                <span><?php echo $fetch_subcat_query['subcat_name'];?></span>
                             </nav>
                         </div>
                     </div>
@@ -36,7 +39,7 @@
                         <div class="col-md-9 push-md-3">
                             <!-- Title -->
                             <div class="list-page-title">
-                                <h2 class="">Men Polos & Tees <small>120 Products</small></h2>
+                                <h2 class=""><?php echo $fetch_subcat_query['subcat_name'];?>&nbsp;<small><?php echo $fetch_count['count(product_id)'];?>&nbsp;Products</small></h2>
                             </div>
                             <!-- End Title -->
 
@@ -92,42 +95,37 @@
                             <!-- End Product Filter -->
 
                             <!-- Product filters Toggle-->
+								
                             <div class="container product-filter-dropdown toggle-content" id="filter-slide-toggle">
                                 <div class="row col mlr-0">
                                     <!-- Shop Categories -->
+								
                                     <div class="widget-sidebar col-sm-12 col-md-6 col-lg-3">
                                         <h6 class="widget-title">Categories</h6>
+											
                                         <ul class="widget-content widget-product-categories jq-accordian">
+											<?php											
+												$get_cat_id = mysqli_query($mysqli,"select * from category");
+												while($fetch_cat_name = mysqli_fetch_array($get_cat_id))
+												{
+											?>
+                                          
                                             <li>
-                                                <a href="#">Accessories</a>
-                                            </li>
-                                            <li>
-                                                <a class="javascript:void(0)">Clothings<span class="jq-accordionIcon"></span></a>
-                                                <ul class="children" style="display: none;">
-                                                    <li><a href="#">All</a></li>
-                                                    <li><a href="#">Coats &amp; Jackets</a></li>
-                                                    <li><a href="#">Shirts</a></li>
-                                                    <li><a href="#">Sportswear</a></li>
-                                                    <li><a href="#">Swimwear</a></li>
-                                                    <li><a href="#">Trousers</a></li>
+                                                <a class="javascript:void(0)"><?php echo $fetch_cat_name['cat_type'];?>&nbsp;<?php echo $fetch_cat_name['category_name'];?><span class="jq-accordionIcon"></span></a>
+												<?php
+												$cat_id = $fetch_cat_name['cat_id'];
+												$get_subcat_details = mysqli_query($mysqli,"select * from sub_category where cat_id = '$cat_id'");
+												$fetch_subcat_details = mysqli_fetch_array($get_subcat_details);
+												?>
+                                                <ul class="children" style="">
+                                                    <li><a href="#"><?php echo $fetch_subcat_details['subcat_name'];?></a></li>
                                                 </ul>
                                             </li>
-                                            <li>
-                                                <a href="javascript:void(0)">Man<span class="jq-accordionIcon"></span></a>
-                                                <ul style="display: none;">
-                                                    <li><a href="#">All</a></li>
-                                                    <li><a href="#">Coats &amp; Jackets</a></li>
-                                                    <li><a href="#">Shirts</a></li>
-                                                    <li><a href="#">Sportswear</a></li>
-                                                    <li><a href="#">Swimwear</a></li>
-                                                    <li><a href="#">Trousers</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Jacket</a></li>
-                                            <li><a href="#">New arrivals</a></li>
-                                            <li><a href="#">Shoes</a></li>
-                                            <li><a href="sdsd">Socks</a></li>
+											<?php
+											}
+											?>
                                         </ul>
+										
                                     </div>
                                     <!-- End Shop Categories -->
 

@@ -21,8 +21,7 @@ if(isset($_POST['submit_category']))
 	$save_image = rand(99,9999).$image;
 	move_uploaded_file($tmp_image,"uploads/".$save_image);
 	}
-
-	$update_cat = mysqli_query($mysqli,"UPDATE category SET cat_type ='$cat_type',category_name='".$cat_name."', category_image='".$save_image."' where cat_id='$get_cat_id'");
+	$update_cat = mysqli_query($mysqli,"UPDATE category SET cat_type ='$cat_type',category_name='".$cat_name."',category_image='".$save_image."' where cat_id='".$get_cat_id."'");
 
 	if($update_cat){
 		$data = "success";

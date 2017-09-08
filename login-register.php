@@ -6,13 +6,24 @@
 		$email = $_POST['email'];
 		$password = $_POST['password'];
 		
-		$check_reg = mysqli_query($mysqli,"select * from user where email='$email' and password='$password' and user_type='customer' and status='active'");
+		$check_reg = mysqli_query($mysqli,"select * from user where email='$email' and password='$password' and status='active'");
 		$fetch_user_data = mysqli_fetch_array($check_reg);
 		$check_rows = mysqli_num_rows($check_reg);
 		if($check_rows > 0)
 		{
 			$_SESSION['id'] = $fetch_user_data['user_id'];
+			$user_id = $_SESSION['id'];
+			$check_type = mysqli_query($mysqli,"select * from user where user_id = '$user_id'");
+			$fetch_type = mysqli_fetch_array($check_type);
+			if($fetch_type['user_type'] == 'customer'){
 			echo "<script>window.location.href='index.php'</script>";
+			}else if($fetch_type['user_type'] == 'seller'){
+			echo "<script>window.location.href='admin/upload_seller_docs.php'</script>";
+			}else if($fetch_type['user_type'] == 'associate'){
+			echo "<script>window.location.href='admin/approve_sellers.php'</script>";
+			}else if($fetch_type['user_type'] == 'admin'){
+			echo "<script>window.location.href='admin/dashboard.php'</script>";
+			}
 		}
 		else
 		{
@@ -27,6 +38,9 @@
 		$phone = $_POST['phone'];
 		$email = $_POST['email'];
 		$password = $_POST['password'];
+		$check_mail = mysqli_query($mysqli,"select * from user where email='$email'");
+		$check_rows = mysqli_num_rows($check_mail);
+		if($check_rows < 1){
 		$save_reg = mysqli_query($mysqli,"insert into user values('','".$fname."','".$lname."','','".$email."','','".$phone."','','','','','','','','','".$password."','active','','','customer')");
 		if($save_reg)
 		{
@@ -37,6 +51,10 @@
 		{
 			$data = "error";
 		}
+		}else{
+			$data = "email";
+		}
+
 	}
 	
 ?>

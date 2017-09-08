@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
 		$fetch_details = mysqli_fetch_array($login_que);
 		$get_rows = mysqli_num_rows($login_que);
 		if($get_rows > 0){
-			$_SESSION['user_id'] = $fetch_details['user_id'];
+			$_SESSION['id'] = $fetch_details['user_id'];
 
 			echo "<script>window.location.href='dashboard.php'</script>";
 		}else{

@@ -23,7 +23,6 @@ if(isset($_POST['submit_product']))
 		$image[$i];
 		$save_product_image = rand(99,9999).$image[$i];
 		move_uploaded_file($tmp_image[$i] , "uploads/".$save_product_image);
-			
 		$add_pro_image = mysqli_query($mysqli,"INSERT INTO product_image VALUES('','$last_product_id','$save_product_image')");
 			}
 
@@ -245,7 +244,7 @@ if(isset($_POST['submit_product']))
 															<i class="fa fa-briefcase"></i>
 														</span>
 														<select class="form-control select2me " name="brand_type">
-															<option value="" selected disabled>Select</option>
+															<option value="no_brand" selected>No Brand</option>
 															<?php
 															$get_brand_name = mysqli_query($mysqli,"select * from brand");
 															while($fetch_brand_name = mysqli_fetch_array($get_brand_name))

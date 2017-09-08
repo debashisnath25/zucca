@@ -8,12 +8,12 @@
 		$lname = $_POST['lname'];
 		$phone = $_POST['phone'];
 		$email = $_POST['email'];
-		$password = $_POST['password'];
-		$save_reg = mysqli_query($mysqli,"insert into seller_log values('','".$fname."','".$lname."','".$phone."','".$email."','".$password."')");
+		$password = $_POST['pass'];
+		$save_reg = mysqli_query($mysqli,"insert into user values('','".$fname."','".$lname."','','".$email."','','".$phone."','','','','','','','','','".$password."','active','','','seller')");
 		if($save_reg)
 		{
-			$_SESSION['seller_id'] = mysqli_insert_id($mysqli);
-			echo "<script>alert('yoo')</script>";
+			$_SESSION['id'] = mysqli_insert_id($mysqli);
+			echo "<script>window.location.href='admin/upload_seller_docs.php'</script>";
 		}
 		else
 		{
@@ -68,7 +68,7 @@
 									<div class="form-field-wrapper">
                                         <label>Enter Your Phone Number <span class="required">*</span></label>
                                         <input id="phone" class="input-md form-full-width" name="phone" placeholder="Enter Your Phone Number" value="" size="30" aria-required="true" required="" type="number_format">
-                                    </div>
+                                    </div>									
                                     <div class="form-field-wrapper">
                                         <label>Enter Your Email <span class="required">*</span></label>
                                         <input id="email" class="input-md form-full-width" name="email" placeholder="Enter Your Email Address" value="" size="30" aria-required="true" required="" type="email">

@@ -250,7 +250,7 @@
 							{
 							?>
                             <li>
-                                <a href="shop_list.php"><?php echo $fetch_cat_query['cat_type'];?></a>
+                                <a href="javascript:void(0);"><?php echo $fetch_cat_query['cat_type'];?></a>
                                 <!-- Drodown Menu ------->
                                 <ul class="nav-dropdown js-nav-dropdown">
                                     <li class="container">
@@ -281,9 +281,17 @@
 							<?php
 							}
 							?>
-							<li>
-                                <a href="login-register.php"><i class="fa fa-lock left" aria-hidden="true"></i><span class="hidden-sm-down">Login</span></a>
-                            </li>
+									<?php
+										if($id == ''){
+										?>
+                                        <li><a href="login-register.php"><i class="fa fa-lock left" aria-hidden="true"></i>Login</a></li>
+										<?php
+										}else{
+										?>
+										<li><a href="admin/logout.php"><i class="fa fa-lock left" aria-hidden="true"></i>Logout</a></li>
+										<?php
+										}
+										?>
                             <li class="dropdown-nav">
                                 <a href="login-register.html"><i class="fa fa-user left" aria-hidden="true"></i><span class="hidden-sm-down">My Account</span><i class="fa fa-angle-down right" aria-hidden="true"></i></a>
                                 <!--Dropdown-->
@@ -297,7 +305,17 @@
                                     </ul>
                                     <span class="divider"></span>
                                     <ul>
+										<?php
+										if($id == ''){
+										?>
                                         <li><a href="login-register.php"><i class="fa fa-lock left" aria-hidden="true"></i>Login</a></li>
+										<?php
+										}else{
+										?>
+										<li><a href="admin/logout.php"><i class="fa fa-lock left" aria-hidden="true"></i>Logout</a></li>
+										<?php
+										}
+										?>
                                         <li><a href="login-register.php"><i class="fa fa-user left" aria-hidden="true"></i>Create an Account</a></li>
                                     </ul>
                                 </div>

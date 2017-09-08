@@ -1,6 +1,6 @@
             <?php
 			$page_name = BASENAME($_SERVER['PHP_SELF']);
-			$user_id = $_SESSION['user_id'];
+			$user_id = $_SESSION['id'];
 			$check_user_type = mysqli_query($mysqli,"select * from user where user_id = '$user_id'");
 			$fetch_user_type = mysqli_fetch_array($check_user_type);
 			?>
@@ -156,15 +156,7 @@
 				<?php
 				}else if($fetch_user_type['user_type']=='seller'){
 				?>		
-						 <li class="nav-item start <?php if($page_name == 'dashboard.php'){ ?>active open<?php } ?>">
-                            <a href="dashboard.php" class="nav-link nav-toggle">
-                                <i class="icon-home"></i>
-                                <span class="title">Dashboard</span>
-                                <span class="selected"></span>
-                            </a>
-                        </li>
-
-						 <li class="nav-item start <?php if($page_name == 'add_product.php' || $page_name == 'listing_product.php' || $page_name == 'view_product.php' || $page_name == 'edit_product.php') { ?>active open<?php } ?>  ">
+						<li class="nav-item start <?php if($page_name == 'add_product.php' || $page_name == 'listing_product.php' || $page_name == 'view_product.php' || $page_name == 'edit_product.php') { ?>active open<?php } ?>  ">
                             <a href="javascript:void(0);" class="nav-link nav-toggle">
                                 <i class="icon-briefcase"></i>
                                 <span class="title">Product</span>
