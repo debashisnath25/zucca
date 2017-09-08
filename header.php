@@ -252,35 +252,42 @@
                             <li>
                                 <a href="javascript:void(0);"><?php echo $fetch_cat_query['cat_type'];?></a>
                                 <!-- Drodown Menu ------->
-                                <ul class="nav-dropdown js-nav-dropdown">
+                                <ul class="nav-dropdown js-nav-dropdown">								
                                     <li class="container">
-                                        <ul class="row">
+									    <ul class="row">
                                             <!--Grid 1-->
                                             <li class="nav-dropdown-grid">
                                                 <h6><?php echo $fetch_cat_query['category_name'];?></h6>
                                                 <ul>
-                                                    <li>
 													<?php
 													$cat_id = $fetch_cat_query['cat_id'];
 													$get_sub_cat = mysqli_query($mysqli,"select * from sub_category where cat_id = '$cat_id'");
-													$fetch_sub_cat = mysqli_fetch_array($get_sub_cat);
+													while($fetch_sub_cat = mysqli_fetch_array($get_sub_cat)){
 													$sub_cat_id = $fetch_sub_cat['subcat_id'];
-													?><a href="shop_list.php?sub_id=<?php echo $sub_cat_id;?>">
-													<?php
-													echo $fetch_sub_cat['subcat_name'];
 													?>
-													</a></li>
+                                                    <li>
+													<a href="shop_list.php?sub_id=<?php echo $sub_cat_id;?>">
+													<?php
+													echo $fetch_sub_cat['subcat_name'];													
+													?>
+													</a>
+													</li>
+													<?php
+													}
+													?>
                                                 </ul>
+												
                                             </li>
-                                            <!--Grid 2-->
-                                        </ul>
-                                    </li>
+                                            <!--Grid 2-->											
+                                        </ul>										
+                                    </li>									
                                 </ul>
+								<?php
+								}
+								?>
                                 <!-- End Drodown Menu -->
                             </li>
-							<?php
-							}
-							?>
+							
 									<?php
 										if($id == ''){
 										?>

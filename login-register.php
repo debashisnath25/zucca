@@ -27,7 +27,7 @@
 		}
 		else
 		{
-			$data = "error";
+			$data = "email";
 		}
 	}
 	
